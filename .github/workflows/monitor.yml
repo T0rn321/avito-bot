@@ -1,1 +1,42 @@
+name: avito-monitor
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # каждые ~10 минут (GitHub может задерживать запуск)
+  workflow_dispatch:          # кнопка "Run workflow" для ручного запуска
+
+concurrency:
+  group: avito-monitor
+  cancel-in-progress: false
+
+permissions:
+  contents: write             # чтобы сохранять state.json и searches.json
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Проверить Авито
+        env:
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+        run: python avito_bot.py --once
+
+      - name: Сохранить состояние
+        run: |
+          git config user.name "avito-bot"
+          git config user.email "avito-bot@users.noreply.github.com"
+          git add state.json searches.json
+          git diff --cached --quiet || (git commit -m "update state" && git push)
 
