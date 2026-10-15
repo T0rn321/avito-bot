@@ -1,23 +1,39 @@
 name: avito-monitor
 
+# Как это работает.
+# Расписание GitHub (cron) срабатывает с большими задержками и иногда пропускает запуски,
+# поэтому на него завязан только ЗАПУСК. Сам бот работает долго: одна задача живёт 5 ч 40 мин
+# и проверяет Авито каждые ~60 секунд (интервал меняется командой /interval в Telegram).
+# В самом начале задача ставит в очередь следующий запуск. Он ждёт, пока текущий закончится,
+# и стартует сразу за ним, так что бот работает без перерывов, а cron нужен лишь как страховка.
+
 on:
   schedule:
-    - cron: "*/10 * * * *"   # каждые ~10 минут (GitHub может задерживать запуск)
-  workflow_dispatch:          # кнопка "Run workflow" для ручного запуска
+    - cron: "23 */2 * * *"          # страховка: если цепочка оборвалась, она запустится заново
+  workflow_dispatch:                 # кнопка "Run workflow" для ручного запуска
+  push:                              # первый запуск автоматически после загрузки этого файла
+    branches: [main, master]
+    paths: [".github/workflows/monitor.yml"]
 
 concurrency:
   group: avito-monitor
-  cancel-in-progress: false
+  cancel-in-progress: false          # новый запуск ждёт в очереди, а не убивает текущий
 
 permissions:
-  contents: write             # чтобы сохранять state.json и searches.json
+  contents: write                    # сохранять state.json и searches.json
+  actions: write                     # поставить в очередь следующий запуск
 
 jobs:
-  check:
+  run:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 355             # лимит GitHub на задачу: 360 минут
     steps:
       - uses: actions/checkout@v4
+
+      - name: Поставить в очередь следующий запуск
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run monitor.yml --ref "${{ github.ref_name }}" || echo "не удалось поставить в очередь (не страшно, подстрахует cron)"
 
       - uses: actions/setup-python@v5
         with:
@@ -26,16 +42,13 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Проверить Авито
+      - name: Бот (быстрый цикл ~5 ч 40 мин)
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
           PROXY_URL: ${{ secrets.PROXY_URL }}
-        run: python avito_bot.py --once
+        run: python avito_bot.py --daemon --duration 20400
 
       - name: Сохранить состояние
-        run: |
-          git config user.name "avito-bot"
-          git config user.email "avito-bot@users.noreply.github.com"
-          git add state.json searches.json
-          git diff --cached --quiet || (git commit -m "update state" && git push)
+        if: always()
+        run: python avito_bot.py --sync
