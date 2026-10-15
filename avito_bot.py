@@ -36,6 +36,8 @@ from urllib.parse import urlparse
 
 from bs4 import BeautifulSoup
 
+import analyzer as az
+
 try:  # маскируется под настоящий браузер (TLS-отпечаток)
     from curl_cffi import requests as http
 
@@ -68,7 +70,12 @@ BLOCK_MARKERS = (
 MAX_SEND_PER_SEARCH = 10      # максимум сообщений по одному поиску за проход
 SEEN_LIMIT = 2000             # сколько объявлений помнить на один поиск
 PAUSE_BETWEEN_SEARCHES = (3.0, 8.0)
-DEFAULT_DEAL_PCT = 25         # «выгодно» = дешевле рынка минимум на столько %
+DEFAULT_DEAL_PCT = 0          # пометка «дешевле медианы выдачи» по умолчанию выключена (см. README)
+ENRICH_PER_CYCLE = 4          # сколько объявлений за проход проверять глубоко (страница + профиль продавца)
+SELLER_TTL = 24 * 3600        # как долго помнить результат проверки продавца
+DISCOGS_TTL = 7 * 24 * 3600   # как долго помнить найденное на Discogs
+CACHE_LIMIT = 300             # сколько записей держать в каждом кэше
+DEFAULT_USD_RUB = 90.0        # запасной курс, если не удалось получить курс ЦБ
 MIN_MARKET_SAMPLES = 12       # сколько цен нужно, чтобы доверять медиане
 QUEUE_LIMIT = 40              # сколько сообщений копить за тихие часы
 QUEUE_FLUSH = 15              # сколько отправить утром
@@ -145,10 +152,10 @@ def send_text(token: str, chat_id: str, text: str) -> None:
 
 
 def send_item(token: str, chat_id: str, text: str, image: str | None) -> None:
-    if image:
+    if image and len(text) <= 1020:  # длиннее подпись обрезалась бы посреди тега и не отправилась бы
         res = tg(
             token, "sendPhoto", chat_id=chat_id, photo=image,
-            caption=text[:1020], parse_mode="HTML",
+            caption=text, parse_mode="HTML",
         )
         if res.get("ok"):
             return
@@ -363,6 +370,9 @@ def parse_items(page: str) -> list[dict]:
             p = el.select_one('[data-marker="item-price"]')
             price = _digits(p.get_text()) if p else None
 
+        if price is None and re.search(r"бесплатно|отдам\s+даром", el.get_text(" ", strip=True), re.I):
+            price = 0  # «Отдам даром»
+
         place = el.select_one('[data-marker="item-address"]') or el.select_one(
             '[class*="geo-root"]'
         )
@@ -438,14 +448,16 @@ def deal_percent(item: dict, market: tuple[int, int] | None, s: dict) -> int | N
 
 
 def fmt_price(p: int | None) -> str:
+    if p == 0:
+        return "Бесплатно"
     return "цена не указана" if p is None else f"{p:,}".replace(",", " ") + " ₽"
 
 
 def build_text(
     item: dict, search_name: str, old_price: int | None = None, head: str | None = None,
-    market: tuple[int, int] | None = None, pct: int | None = None,
+    market: tuple[int, int] | None = None, pct: int | None = None, info: dict | None = None,
 ) -> str:
-    deal_head = f"🔥 <b>Выгодно: на {pct}% дешевле рынка</b>" if pct else None
+    deal_head = f"🔥 <b>Дешевле медианы выдачи на {pct}%</b>" if pct else None
     head = head or (
         "📉 <b>Цена снизилась</b>" if old_price else (deal_head or "🆕 <b>Новое объявление</b>")
     )
@@ -453,10 +465,11 @@ def build_text(
     if old_price:
         price = f"{fmt_price(old_price)} → <b>{price}</b>"
     lines = [head, html.escape(item["title"]), f"💰 {price}"]
-    if market:
-        lines.append(f"📊 Рынок ~{fmt_price(market[0])} (по {market[1]} объявл.)")
+    if market and pct:
+        lines.append(f"📊 Медиана выдачи ~{fmt_price(market[0])} (по {market[1]} объявл.)")
     if pct and head != deal_head:
-        lines.append(f"🔥 На {pct}% дешевле рынка")
+        lines.append(f"🔥 На {pct}% дешевле медианы выдачи")
+    lines.extend(info_lines(info, item.get("price")) if info else [])
     if item["place"]:
         lines.append(f"📍 {html.escape(item['place'])}")
     if item["date"]:
@@ -464,6 +477,196 @@ def build_text(
     lines.append(f"🔎 {html.escape(search_name)}")
     lines.append(f'<a href="{html.escape(item["url"], quote=True)}">Открыть на Авито</a>')
     return "\n".join(lines)
+
+
+# ---------------------------------------------------------------- глубокая проверка объявления
+
+
+def soft_fetch(url: str, proxy: str | None) -> str | None:
+    """Скачивает страницу для анализа. Ошибки и блокировки не считаются блокировкой поиска:
+    состояние «заблокировано» основного обхода сохраняется и восстанавливается."""
+    saved = (set(_run["failed_fps"]), _run["blocked_all"])
+    try:
+        return fetch(url, proxy)
+    except Exception as e:
+        log.info("страница для анализа не открылась (%s): %s", url[:60], e)
+        return None
+    finally:
+        _run["failed_fps"], _run["blocked_all"] = saved
+
+
+def _prune(cache: dict) -> None:
+    while len(cache) > CACHE_LIMIT:
+        oldest = min(cache, key=lambda k: cache[k].get("t", 0))
+        cache.pop(oldest)
+
+
+def _api_get(url: str, params: dict | None = None, headers: dict | None = None):
+    import requests  # для обычных API браузерная маскировка не нужна
+
+    try:
+        r = requests.get(url, params=params, headers=headers, timeout=15)
+        return r.json() if r.status_code == 200 else None
+    except Exception as e:
+        log.info("API %s: %s", url[:50], e)
+        return None
+
+
+def usd_rub(state: dict, settings: dict) -> float:
+    c = state.get("usd_rub") or {}
+    if c.get("v") and time.time() - c.get("t", 0) < 12 * 3600:
+        return c["v"]
+    data = _api_get("https://www.cbr-xml-daily.ru/daily_json.js")
+    try:
+        v = float(data["Valute"]["USD"]["Value"])
+        state["usd_rub"] = {"t": time.time(), "v": v}
+        return v
+    except Exception:
+        return c.get("v") or float(settings.get("usd_rub") or DEFAULT_USD_RUB)
+
+
+def discogs_lookup(title: str, state: dict, token: str) -> dict | None:
+    """Ищет пластинку на Discogs по названию объявления. None, если не нашлось уверенного совпадения."""
+    q = az.discogs_query(title)
+    if len(q.split()) < 2:
+        return None
+    cache = state.setdefault("discogs", {})
+    hit = cache.get(q)
+    if hit and time.time() - hit.get("t", 0) < DISCOGS_TTL:
+        return hit.get("d")
+    headers = {"User-Agent": "AvitoVinylBot/1.0", "Authorization": f"Discogs token={token}"}
+    data = _api_get("https://api.discogs.com/database/search",
+                    {"q": q, "type": "release", "per_page": 8}, headers)
+    if data is None:  # сеть или лимит: не кэшируем, попробуем позже
+        return None
+    best, score = az.best_discogs_match(q, data.get("results") or [])
+    d = None
+    if best:
+        comm = best.get("community") or {}
+        uri = best.get("uri") or ""
+        d = {
+            "title": best.get("title"), "year": best.get("year"), "score": round(score, 2),
+            "have": comm.get("have"), "want": comm.get("want"),
+            "url": ("https://www.discogs.com" + uri) if uri.startswith("/") else uri,
+        }
+        rel = _api_get(f"https://api.discogs.com/releases/{best.get('id')}", {"curr_abbr": "USD"}, headers)
+        if rel:
+            d["lowest_usd"] = rel.get("lowest_price")
+            d["for_sale"] = rel.get("num_for_sale")
+            rc = rel.get("community") or {}
+            d["have"] = d["have"] if d["have"] is not None else rc.get("have")
+            d["want"] = d["want"] if d["want"] is not None else rc.get("want")
+    cache[q] = {"t": time.time(), "d": d}
+    _prune(cache)
+    return d
+
+
+def analyze_item(item: dict, state: dict, proxy: str | None, settings: dict) -> dict:
+    """Читает страницу объявления и профиль продавца, ищет пластинку на Discogs, оценивает перекупа.
+
+    Всё необязательно: если страница не открылась, оценка строится только по названию."""
+    page = None
+    if _run.get("enrich_left", 0) > 0:
+        _run["enrich_left"] -= 1
+        page = soft_fetch(item["url"], proxy)
+    ad = az.parse_ad_page(page) if page else {}
+    title = item.get("title") or ad.get("title") or ""
+    price = item.get("price") if item.get("price") is not None else ad.get("price")
+    text = f"{title}\n{ad.get('description', '')}"
+
+    seller = None
+    keys = ("company", "since", "reviews", "rating", "seller_name")
+    key = az.seller_key(ad.get("seller_url"))
+    if key:
+        cache = state.setdefault("sellers", {})
+        hit = cache.get(key)
+        if hit and time.time() - hit.get("t", 0) < SELLER_TTL:
+            seller = hit.get("d")
+        else:
+            time.sleep(random.uniform(1.2, 2.5))
+            ppage = soft_fetch(ad["seller_url"], proxy)
+            if ppage:
+                seller = az.parse_profile(ppage, parse_items)
+                seller.update({k: ad[k] for k in keys if k in ad})
+                cache[key] = {"t": time.time(), "d": seller}
+                _prune(cache)
+    if seller is None and ad:
+        seller = {k: ad[k] for k in keys if k in ad} or None
+
+    lot = az.detect_lot(text)
+    token = os.getenv("DISCOGS_TOKEN")
+    dg = discogs_lookup(title, state, token) if token and not lot else None
+    rub_low = dg["lowest_usd"] * usd_rub(state, settings) if dg and dg.get("lowest_usd") else None
+
+    rs = az.reseller_score(text, seller, price, rub_low)
+    if not page:
+        rs["basis"] = "только по названию, страница не открылась"
+        if rs["score"] <= 0:  # зелёная метка без единой улики ввела бы в заблуждение
+            rs.update(pct=None, icon="⚪", label="недостаточно данных")
+    return {
+        "title": title, "price": price, "lot": lot, "rare": az.rarity_keywords(text),
+        "watch": az.watch_hits(text, settings.get("watch", [])), "reseller": rs,
+        "discogs": dg, "cls": az.classify_discogs(dg) if dg else None, "rub_low": rub_low,
+        "seller": seller, "ad": ad, "page_ok": bool(page),
+    }
+
+
+def info_lines(info: dict, price: int | None = None, verbose: bool = False) -> list[str]:
+    """Строки с результатами анализа для сообщения в Telegram (HTML)."""
+    esc = html.escape
+    L: list[str] = []
+    price = info.get("price") if price is None else price
+    lot = info.get("lot")
+    if lot:
+        n = f" ≈{lot['count']} шт." if lot.get("count") else ""
+        L.append(f"📦 <b>Похоже на лот{n}</b>: возможно, отдают только вместе. Каждую пластинку не оценить")
+    dg, cls, rub = info.get("discogs"), info.get("cls"), info.get("rub_low")
+    if dg:
+        tags = (cls or {}).get("tags", [])
+        head = "💎 <b>Редкая/востребованная</b>" if "rare" in tags else (
+            "🔥 <b>Популярная</b>" if "popular" in tags else "ℹ️ Нашёл на Discogs")
+        if "valuable" in tags and "rare" not in tags:
+            head += ", ценная"
+        bits = []
+        if dg.get("want") is not None and dg.get("have") is not None:
+            bits.append(f"хотят {dg['want']}, есть {dg['have']}")
+        if dg.get("lowest_usd"):
+            bits.append(f"от ${dg['lowest_usd']:.0f} ≈ {fmt_price(int(rub))}")
+        bits.append(f"совпадение {int(dg.get('score', 0) * 100)}%")
+        L.append(f"{head}: {esc(str(dg.get('title')))} ({'; '.join(bits)})")
+        if price and rub and price * 2.5 <= rub:
+            L.append(f"💸 Дешевле Discogs примерно в {rub / price:.0f} раз(а)")
+        if price == 0 and rub:
+            L.append("🎁 Бесплатно, а на Discogs она продаётся")
+    if info.get("rare"):
+        L.append("🔎 Признаки редкости: " + esc(", ".join(info["rare"])))
+    if info.get("watch"):
+        L.append("⭐ Из вашего списка: " + esc(", ".join(info["watch"])))
+    rs = info.get("reseller")
+    if rs:
+        why = "; ".join(rs["reasons"][:3]) or "явных признаков нет"
+        if rs["pct"] is None:
+            L.append(f"⚪ Перекуп: недостаточно данных ({esc(rs['basis'])})")
+        else:
+            L.append(f"{rs['icon']} <b>Перекуп ~{rs['pct']}%</b> ({rs['label']}): {esc(why)}")
+            L.append(f"   ↳ {esc(rs['basis'])}")
+    if verbose:
+        sel = info.get("seller") or {}
+        ad = info.get("ad") or {}
+        L.append("")
+        L.append("<b>Что прочитал бот</b>")
+        L.append(f"страница объявления: {'открылась' if info.get('page_ok') else 'НЕ открылась'}; "
+                 f"описание: {len(ad.get('description', ''))} симв.")
+        L.append(f"продавец: {esc(str(ad.get('seller_name') or 'не нашёл'))}"
+                 f"{' (магазин)' if ad.get('company') else ''}; на Авито с: {esc(str(ad.get('since') or '—'))}; "
+                 f"отзывов: {ad.get('reviews', '—')}")
+        L.append(f"профиль: объявлений на странице {sel.get('items', '—')}, из них про винил {sel.get('vinyl', '—')}, "
+                 f"завершённых {sel.get('closed', '—')}, активных {sel.get('active', '—')}")
+        L.append("баллы: " + (", ".join(f"{p:+d} {esc(r)}" for p, r in (rs or {}).get("detail", [])) or "нет")
+                 + f" → сумма {(rs or {}).get('score', 0)}")
+        if not os.getenv("DISCOGS_TOKEN"):
+            L.append("Discogs не подключён (нет DISCOGS_TOKEN): редкость только по тексту")
+    return L
 
 
 # ---------------------------------------------------------------- проверка одного поиска
@@ -512,9 +715,16 @@ def check_search(
         ready.append((it, old, pct))
 
     ready.reverse()  # старые сначала, самое свежее последним
+    infos: dict = {}
+    if settings.get("analyze", True):
+        for it, _old, _pct in ready[:MAX_SEND_PER_SEARCH]:
+            try:
+                infos[it["id"]] = analyze_item(it, state, proxy, settings)
+            except Exception as e:  # анализ не должен мешать доставке
+                log.warning("анализ %s: %s", it["id"], e)
     sent = 0
     for it, old, pct in ready[:MAX_SEND_PER_SEARCH]:
-        text = build_text(it, name, old, market=market, pct=pct)
+        text = build_text(it, name, old, market=market, pct=pct, info=infos.get(it["id"]))
         sent += deliver(token, chat_id, state, text, it["image"], quiet)
     extra = len(ready) - MAX_SEND_PER_SEARCH
     if extra > 0 and not quiet:
@@ -539,6 +749,9 @@ HELP = (
     "/tz 5 — ваш часовой пояс (UTC+5)\n"
     "/report 9 или /report off — час ежедневного отчёта\n"
     "/interval 60 — как часто проверять Авито (секунды, меньше = быстрее, но рискованнее)\n"
+    "/check ссылка — разобрать объявление: перекуп, лот, редкость (и что именно прочитал бот)\n"
+    "/analyze on|off — проверка продавцов и редкости в каждом уведомлении\n"
+    "/watch слово, /unwatch слово, /watchlist — свои слова (артист, лейбл): пометка ⭐ в уведомлении\n"
     "/status — состояние бота\n\n"
     "Ссылку на поиск берите с Авито после выбора города и фильтров, "
     "с сортировкой «по дате»."
@@ -550,7 +763,7 @@ SET_HELP = (
     "max 3000 — макс. цена (0 — убрать)\n"
     "min 500 — мин. цена\n"
     "age 2 — только объявления свежее 2 часов (0 — убрать)\n"
-    "deal 30 — «выгодно», если дешевле рынка на 30% (off — отключить, default — 25%)\n"
+    "deal 30 — пометка, если цена ниже медианы выдачи на 30% (off — отключить; по умолчанию выключено)\n"
     "only on — слать только выгодные (off — все)\n"
     "inc слово1, слово2 — в названии должно быть хоть одно (- убрать)\n"
     "exc слово1, слово2 — в названии не должно быть (- убрать)"
@@ -593,14 +806,15 @@ def apply_set(s: dict, key: str, val: str) -> str | None:
             return "Пометка «выгодно» выключена"
         if v in ("default", "по умолчанию"):
             s.pop("deal_pct", None)
-            return f"Порог «выгодно» по умолчанию: {DEFAULT_DEAL_PCT}%"
+            return "Пометка «выгодно» по умолчанию выключена" if not DEFAULT_DEAL_PCT else (
+                f"Порог «выгодно» по умолчанию: {DEFAULT_DEAL_PCT}%")
         if re.fullmatch(r"\d{1,2}", v) and 1 <= int(v) <= 95:
             s["deal_pct"] = int(v)
-            return f"«Выгодно» = дешевле рынка минимум на {v}%"
+            return f"«Выгодно» = дешевле медианы выдачи минимум на {v}%"
     elif key == "only":
         if v in _ON:
             s["only_deals"] = True
-            return "Буду слать только выгодные (дешевле рынка)"
+            return "Буду слать только выгодные (дешевле медианы выдачи)"
         if v in _OFF:
             s.pop("only_deals", None)
             return "Буду слать все подходящие"
@@ -649,6 +863,9 @@ def status_text(cfg: dict, state: dict, local: datetime) -> str:
         "⏸ На паузе" if st.get("paused") else "▶️ Работает",
         f"🔎 Поисков: {len(cfg.get('searches', []))}",
         f"⏱ Интервал проверки: {st.get('interval') or DEFAULT_INTERVAL} сек",
+        f"🕵️ Проверка продавцов: {'вкл' if st.get('analyze', True) else 'выкл'}; "
+        f"Discogs: {'подключён' if os.getenv('DISCOGS_TOKEN') else 'не подключён'}; "
+        f"слов в списке ⭐: {len(st.get('watch', []))}",
         f"🦊 «Браузер» для Авито: {_fp['current']}",
         f"🌙 Тихие часы: {quiet if quiet else 'выкл'} (ваше время сейчас {local:%H:%M}, UTC{local.utcoffset().total_seconds() / 3600:+g})",
         f"📅 Отчёт: {f'в {rh}:00' if rh is not None else 'выкл'}",
@@ -663,7 +880,8 @@ def status_text(cfg: dict, state: dict, local: datetime) -> str:
     if stats:
         lines.append(
             f"За период: проверок {stats.get('checked', 0)}, новых {stats.get('new', 0)}, "
-            f"отправлено {stats.get('sent', 0)}, блокировок {stats.get('blocked', 0)}"
+            f"отправлено {stats.get('sent', 0)}, блокировок {stats.get('blocked', 0)}, "
+            f"смен «браузера» {stats.get('switches', 0)}"
         )
     return "\n".join(lines)
 
@@ -826,6 +1044,55 @@ def handle_commands(
             else:
                 say(f"Формат: /interval 60 (секунд, от {MIN_INTERVAL} до {MAX_INTERVAL}) или /interval default")
 
+        elif cmd == "/analyze":
+            if rest.lower() in _ON:
+                st["analyze"] = True
+                changed = True
+                say("🕵️ Проверка продавцов и редкости включена.")
+            elif rest.lower() in _OFF:
+                st["analyze"] = False
+                changed = True
+                say("Проверка продавцов выключена: уведомления придут быстрее и без пометок.")
+            else:
+                say("Формат: /analyze on или /analyze off")
+
+        elif cmd in ("/watch", "/unwatch"):
+            w = rest.lower()
+            wl = st.setdefault("watch", [])
+            if not w:
+                say("Формат: /watch слово (артист, лейбл, название). Список: /watchlist")
+            elif cmd == "/watch":
+                if w not in wl:
+                    wl.append(w)
+                    changed = True
+                say(f"⭐ Буду отмечать объявления со словом «{html.escape(w)}».")
+            elif w in wl:
+                wl.remove(w)
+                changed = True
+                say(f"Убрал «{html.escape(w)}» из списка.")
+            else:
+                say("Такого слова нет в списке, смотри /watchlist")
+
+        elif cmd == "/watchlist":
+            wl = st.get("watch", [])
+            say("⭐ Ваш список: " + ", ".join(html.escape(w) for w in wl) if wl else "Список пуст. Добавить: /watch слово")
+
+        elif cmd == "/check":
+            m = re.search(r"https?://\S*avito\.ru/\S+", rest)
+            if not m:
+                say("Формат: /check ссылка на объявление Авито")
+                continue
+            if state.get("cooldown_until", 0) > time.time():
+                say(f"Авито сейчас не пускает, попробую после {_hhmm(state['cooldown_until'], local)}.")
+                continue
+            say("🔎 Разбираю объявление, это займёт несколько секунд…")
+            _run["failed_fps"], _run["blocked_all"], _run["enrich_left"] = set(), False, 1
+            try:
+                info = analyze_item({"title": "", "url": m.group(0).rstrip(").,"), "price": None}, state, proxy, st)
+                say("\n".join(info_lines(info, verbose=True))[:4000])
+            except Exception as e:
+                say(f"Не получилось разобрать: {html.escape(str(e))}")
+
         elif cmd == "/status":
             say(status_text(cfg, state, local))
 
@@ -904,6 +1171,7 @@ def run_cycle(token: str, chat_id: str, proxy: str | None) -> bool:
     st = cfg["settings"]
 
     _run["failed_fps"], _run["blocked_all"] = set(), False
+    _run["enrich_left"] = ENRICH_PER_CYCLE
     _fp["current"], _fp["switched_from"] = state.get("fp") or START_FP, None
 
     try:
@@ -956,12 +1224,9 @@ def run_cycle(token: str, chat_id: str, proxy: str | None) -> bool:
             stats["errors"] += 1
             log.error("%s: %s", s.get("name"), e)
 
-    if _fp["switched_from"]:
-        send_text(
-            token, chat_id,
-            f"ℹ️ Авито перестал пускать как «{_fp['switched_from']}», переключился на «{_fp['current']}». "
-            "Дальше работаю так.",
-        )
+    if _fp["switched_from"]:  # в Telegram не пишем: при «плавающих» отказах это превращалось в спам
+        stats["switches"] = stats.get("switches", 0) + 1
+        log.info("Авито не пустил как «%s», переключился на «%s»", _fp["switched_from"], _fp["current"])
     state["fp"] = _fp["current"]
 
     all_blocked = blocked > 0 and ok == 0
