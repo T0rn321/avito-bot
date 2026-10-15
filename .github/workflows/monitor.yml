@@ -47,6 +47,7 @@ jobs:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
           PROXY_URL: ${{ secrets.PROXY_URL }}
+          DISCOGS_TOKEN: ${{ secrets.DISCOGS_TOKEN }}   # необязательно: редкость и цены с Discogs
         run: python avito_bot.py --daemon --duration 20400
 
       - name: Сохранить состояние
