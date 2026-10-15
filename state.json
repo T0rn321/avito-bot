@@ -64,15 +64,15 @@
     "new": 4,
     "sent": 4,
     "deals": 0,
-    "blocked": 1,
+    "blocked": 2,
     "errors": 0,
     "switches": 3
   },
   "last_report_date": "2026-10-15",
   "fp": "firefox",
-  "fails": 0,
+  "fails": 1,
   "warned": false,
-  "cooldown_until": 0,
+  "cooldown_until": 1792074310.2463183,
   "last_ok": 1792073249.5115325,
   "shown": [
     {
