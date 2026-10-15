@@ -52,15 +52,17 @@
       "8438889655": 1200,
       "8438344033": 1650,
       "8489597757": 2500,
-      "8512610852": 1500
+      "8512610852": 1500,
+      "8315580073": 2000,
+      "8413346583": 2500
     }
   },
   "queue": [],
   "stats": {
     "since": 1792071280.8289135,
-    "checked": 6,
-    "new": 2,
-    "sent": 2,
+    "checked": 7,
+    "new": 4,
+    "sent": 4,
     "deals": 0,
     "blocked": 1,
     "errors": 0,
@@ -68,10 +70,10 @@
   },
   "last_report_date": "2026-10-15",
   "fp": "firefox",
-  "fails": 1,
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792073241.8772302,
-  "last_ok": 1792072186.3177748,
+  "cooldown_until": 0,
+  "last_ok": 1792073249.5115325,
   "shown": [
     {
       "id": "8489597757",
@@ -96,6 +98,30 @@
       "q": false,
       "s": "Винил",
       "fp": "edg"
+    },
+    {
+      "id": "8413346583",
+      "t": 1792073277,
+      "title": "George Michael 2lp в Уфе",
+      "price": 2500,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/george_michael_2lp_8413346583",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    },
+    {
+      "id": "8315580073",
+      "t": 1792073278,
+      "title": "Slade wall of hits в Уфе",
+      "price": 2000,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/slade_wall_of_hits_8315580073",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
     }
   ],
   "sellers": {
