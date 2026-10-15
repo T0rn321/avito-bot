@@ -75,6 +75,8 @@ ENRICH_PER_CYCLE = 4          # сколько объявлений за про�
 SELLER_TTL = 24 * 3600        # как долго помнить результат проверки продавца
 DISCOGS_TTL = 7 * 24 * 3600   # как долго помнить найденное на Discogs
 CACHE_LIMIT = 300             # сколько записей держать в каждом кэше
+SHOWN_LIMIT = 300             # сколько последних показанных объявлений помнить для /shown
+FRESH_GRACE_MIN = 60          # объявление не старше часа считается свежим даже через полночь
 DEFAULT_USD_RUB = 90.0        # запасной курс, если не удалось получить курс ЦБ
 MIN_MARKET_SAMPLES = 12       # сколько цен нужно, чтобы доверять медиане
 QUEUE_LIMIT = 40              # сколько сообщений копить за тихие часы
@@ -343,7 +345,9 @@ def parse_items(page: str) -> list[dict]:
     """Достаёт объявления из HTML выдачи. Бросает Blocked, если это страница блокировки."""
     soup = BeautifulSoup(page, "html.parser")
     items: list[dict] = []
-    for el in soup.select('[data-marker="item"]'):
+    root = soup.select_one('[data-marker="catalog-serp"]') or soup
+    cards = root.select('[data-marker="item"]') or soup.select('[data-marker="item"]')
+    for el in cards:  # только основная выдача, без блоков «похожие/рекомендации» вне неё
         a = el.select_one('a[data-marker="item-title"]') or el.select_one(
             'a[itemprop="url"]'
         )
@@ -445,6 +449,34 @@ def deal_percent(item: dict, market: tuple[int, int] | None, s: dict) -> int | N
         return None
     pct = round((1 - item["price"] / market[0]) * 100)
     return pct if pct >= thr else None
+
+
+def is_stale(item: dict, settings: dict, local: datetime) -> bool:
+    """True, если объявление опубликовано не сегодня (по подписи даты на карточке).
+
+    Дату не поняли или подписи нет: не отсекаем, чтобы не потерять свежее.
+    Объявления не старше часа считаются свежими и после полуночи."""
+    if not settings.get("today_only", True):
+        return False
+    age = parse_age_minutes(item.get("date"), local)
+    if age is None or age <= FRESH_GRACE_MIN:
+        return False
+    return (local - timedelta(minutes=age)).date() < local.date()
+
+
+def record_shown(state: dict, it: dict, name: str, kind: str, quiet: bool) -> None:
+    """Журнал отправленных объявлений для /shown. Заодно считает настоящие повторы (один id дважды)."""
+    shown = state.setdefault("shown", [])
+    stats = state.setdefault("stats", {})
+    if kind == "new" and any(e["id"] == it["id"] and e.get("kind") == "new" for e in shown):
+        stats["dups"] = stats.get("dups", 0) + 1
+        log.warning("повторная отправка объявления %s", it["id"])
+    shown.append({
+        "id": it["id"], "t": int(time.time()), "title": it["title"][:60], "price": it["price"],
+        "url": it["url"], "date": it.get("date", ""), "kind": kind, "q": bool(quiet),
+        "s": name[:20], "fp": str(_fp["current"])[:3],
+    })
+    del shown[:-SHOWN_LIMIT]
 
 
 def fmt_price(p: int | None) -> str:
@@ -706,7 +738,13 @@ def check_search(
 
     market = market_stats(seen)
     ready: list[tuple[dict, int | None, int | None]] = []
+    stats = state.setdefault("stats", {})
     for it, old in candidates:
+        if old is None and is_stale(it, settings, local):
+            stats["stale"] = stats.get("stale", 0) + 1  # новое для бота, но опубликовано не сегодня
+            continue
+        if old is not None and not settings.get("drops", True):
+            continue
         if not passes(it, s, settings, local):
             continue
         pct = deal_percent(it, market, s)
@@ -726,6 +764,7 @@ def check_search(
     for it, old, pct in ready[:MAX_SEND_PER_SEARCH]:
         text = build_text(it, name, old, market=market, pct=pct, info=infos.get(it["id"]))
         sent += deliver(token, chat_id, state, text, it["image"], quiet)
+        record_shown(state, it, name, "drop" if old else "new", quiet)
     extra = len(ready) - MAX_SEND_PER_SEARCH
     if extra > 0 and not quiet:
         send_text(token, chat_id, f"…и ещё {extra} по поиску «{html.escape(name)}», открой выдачу.")
@@ -751,6 +790,9 @@ HELP = (
     "/interval 60 — как часто проверять Авито (секунды, меньше = быстрее, но рискованнее)\n"
     "/check ссылка — разобрать объявление: перекуп, лот, редкость (и что именно прочитал бот)\n"
     "/analyze on|off — проверка продавцов и редкости в каждом уведомлении\n"
+    "/today on|off — присылать только объявления, опубликованные сегодня (по умолчанию вкл)\n"
+    "/drops on|off — сообщать о снижении цены у уже виденных объявлений\n"
+    "/shown [N] — последние N показанных объявлений (до 15)\n"
     "/watch слово, /unwatch слово, /watchlist — свои слова (артист, лейбл): пометка ⭐ в уведомлении\n"
     "/status — состояние бота\n\n"
     "Ссылку на поиск берите с Авито после выбора города и фильтров, "
@@ -863,6 +905,8 @@ def status_text(cfg: dict, state: dict, local: datetime) -> str:
         "⏸ На паузе" if st.get("paused") else "▶️ Работает",
         f"🔎 Поисков: {len(cfg.get('searches', []))}",
         f"⏱ Интервал проверки: {st.get('interval') or DEFAULT_INTERVAL} сек",
+        f"📅 Только сегодняшние: {'да' if st.get('today_only', True) else 'нет'}; "
+        f"снижения цен: {'да' if st.get('drops', True) else 'нет'}",
         f"🕵️ Проверка продавцов: {'вкл' if st.get('analyze', True) else 'выкл'}; "
         f"Discogs: {'подключён' if os.getenv('DISCOGS_TOKEN') else 'не подключён'}; "
         f"слов в списке ⭐: {len(st.get('watch', []))}",
@@ -880,7 +924,8 @@ def status_text(cfg: dict, state: dict, local: datetime) -> str:
     if stats:
         lines.append(
             f"За период: проверок {stats.get('checked', 0)}, новых {stats.get('new', 0)}, "
-            f"отправлено {stats.get('sent', 0)}, блокировок {stats.get('blocked', 0)}, "
+            f"отправлено {stats.get('sent', 0)}, отсечено как старые {stats.get('stale', 0)}, "
+            f"повторов {stats.get('dups', 0)}, блокировок {stats.get('blocked', 0)}, "
             f"смен «браузера» {stats.get('switches', 0)}"
         )
     return "\n".join(lines)
@@ -1043,6 +1088,45 @@ def handle_commands(
                 say(f"⏱ Вернул стандартный интервал: {DEFAULT_INTERVAL} сек.")
             else:
                 say(f"Формат: /interval 60 (секунд, от {MIN_INTERVAL} до {MAX_INTERVAL}) или /interval default")
+
+        elif cmd == "/today":
+            if rest.lower() in _ON:
+                st["today_only"] = True
+                changed = True
+                say("📅 Буду присылать только объявления, опубликованные сегодня.")
+            elif rest.lower() in _OFF:
+                st["today_only"] = False
+                changed = True
+                say("Фильтр «только сегодня» выключен.")
+            else:
+                say("Формат: /today on или /today off")
+
+        elif cmd == "/drops":
+            if rest.lower() in _ON:
+                st["drops"] = True
+                changed = True
+                say("📉 Буду сообщать о снижении цены.")
+            elif rest.lower() in _OFF:
+                st["drops"] = False
+                changed = True
+                say("Сообщения о снижении цены выключены: приходят только новые объявления.")
+            else:
+                say("Формат: /drops on или /drops off")
+
+        elif cmd == "/shown":
+            n = min(_digits(rest) or 10, 15)
+            shown = state.get("shown", [])
+            if not shown:
+                say("Список пока пуст: бот ведёт его с этой версии. Дальше сюда попадёт всё, что он отправит.")
+                continue
+            rows = []
+            for e in reversed(shown[-n:]):
+                when = datetime.fromtimestamp(e["t"], local.tzinfo).strftime("%d.%m %H:%M")
+                mark = ("📉" if e.get("kind") == "drop" else "🆕") + ("🌙" if e.get("q") else "")
+                link = html.escape(e["url"], quote=True)
+                tail = f" · «{html.escape(e['date'])}»" if e.get("date") else ""
+                rows.append(f'{mark} {when} · <a href="{link}">{html.escape(e["title"][:50])}</a> — {fmt_price(e["price"])}{tail}')
+            say(f"Последние {len(rows)} из {len(shown)} показанных (в кавычках дата с карточки Авито):\n" + "\n".join(rows))
 
         elif cmd == "/analyze":
             if rest.lower() in _ON:
