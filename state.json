@@ -68,25 +68,26 @@
       "8488850198": 1000,
       "8431234560": 1200,
       "8467459406": 1500,
-      "8382148746": 4700
+      "8382148746": 4700,
+      "8338291720": 5000
     }
   },
   "offset": 392334850,
-  "fails": 2,
-  "warned": true,
+  "fails": 0,
+  "warned": false,
   "queue": [],
   "stats": {
     "since": 1792048028.4506176,
-    "checked": 45,
+    "checked": 47,
     "new": 6,
     "sent": 6,
     "deals": 6,
     "blocked": 6,
     "errors": 0,
-    "switches": 22
+    "switches": 23
   },
   "last_report_date": "2026-10-15",
-  "fp": "safari",
-  "cooldown_until": 1792062691.5673842,
-  "last_ok": 1792059650.3036804
+  "fp": "firefox",
+  "cooldown_until": 0,
+  "last_ok": 1792062903.1875947
 }
