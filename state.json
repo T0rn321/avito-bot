@@ -72,21 +72,21 @@
     }
   },
   "offset": 392334848,
-  "fails": 2,
-  "warned": true,
+  "fails": 0,
+  "warned": false,
   "queue": [],
   "stats": {
     "since": 1792048028.4506176,
-    "checked": 36,
+    "checked": 39,
     "new": 6,
     "sent": 6,
     "deals": 6,
     "blocked": 4,
     "errors": 0,
-    "switches": 15
+    "switches": 17
   },
   "last_report_date": "2026-10-15",
   "fp": "firefox",
-  "cooldown_until": 1792058249.2828562,
-  "last_ok": 1792055354.2552292
+  "cooldown_until": 0,
+  "last_ok": 1792058572.3979049
 }
