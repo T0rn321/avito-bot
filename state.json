@@ -72,8 +72,8 @@
     }
   },
   "offset": 392334848,
-  "fails": 1,
-  "warned": false,
+  "fails": 2,
+  "warned": true,
   "queue": [],
   "stats": {
     "since": 1792048028.4506176,
@@ -81,12 +81,12 @@
     "new": 6,
     "sent": 6,
     "deals": 6,
-    "blocked": 3,
+    "blocked": 4,
     "errors": 0,
     "switches": 15
   },
   "last_report_date": "2026-10-15",
   "fp": "firefox",
-  "cooldown_until": 1792056429.3236856,
+  "cooldown_until": 1792058249.2828562,
   "last_ok": 1792055354.2552292
 }
