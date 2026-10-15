@@ -71,22 +71,22 @@
       "8382148746": 4700
     }
   },
-  "offset": 392334848,
+  "offset": 392334850,
   "fails": 0,
   "warned": false,
   "queue": [],
   "stats": {
     "since": 1792048028.4506176,
-    "checked": 39,
+    "checked": 43,
     "new": 6,
     "sent": 6,
     "deals": 6,
     "blocked": 4,
     "errors": 0,
-    "switches": 17
+    "switches": 21
   },
   "last_report_date": "2026-10-15",
   "fp": "firefox",
   "cooldown_until": 0,
-  "last_ok": 1792058572.3979049
+  "last_ok": 1792059273.5170822
 }
