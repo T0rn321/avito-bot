@@ -77,16 +77,16 @@
   "queue": [],
   "stats": {
     "since": 1792048028.4506176,
-    "checked": 15,
+    "checked": 19,
     "new": 6,
     "sent": 6,
     "deals": 6,
     "blocked": 1,
     "errors": 0,
-    "switches": 1
+    "switches": 4
   },
   "last_report_date": "2026-10-15",
-  "fp": "firefox",
+  "fp": "safari",
   "cooldown_until": 0,
-  "last_ok": 1792050702.3981438
+  "last_ok": 1792051421.574596
 }
