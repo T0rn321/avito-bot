@@ -72,8 +72,8 @@
     }
   },
   "offset": 392334850,
-  "fails": 1,
-  "warned": false,
+  "fails": 2,
+  "warned": true,
   "queue": [],
   "stats": {
     "since": 1792048028.4506176,
@@ -81,12 +81,12 @@
     "new": 6,
     "sent": 6,
     "deals": 6,
-    "blocked": 5,
+    "blocked": 6,
     "errors": 0,
     "switches": 22
   },
   "last_report_date": "2026-10-15",
   "fp": "safari",
-  "cooldown_until": 1792060743.9395773,
+  "cooldown_until": 1792062691.5673842,
   "last_ok": 1792059650.3036804
 }
