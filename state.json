@@ -54,15 +54,16 @@
       "8489597757": 2500,
       "8512610852": 1500,
       "8315580073": 2000,
-      "8413346583": 2500
+      "8413346583": 2500,
+      "8315607139": 1200
     }
   },
   "queue": [],
   "stats": {
     "since": 1792071280.8289135,
-    "checked": 29,
-    "new": 4,
-    "sent": 4,
+    "checked": 30,
+    "new": 5,
+    "sent": 5,
     "deals": 0,
     "blocked": 9,
     "errors": 0,
@@ -70,10 +71,10 @@
   },
   "last_report_date": "2026-10-15",
   "fp": "firefox",
-  "fails": 1,
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792085524.5334802,
-  "last_ok": 1792084473.0959148,
+  "cooldown_until": 0,
+  "last_ok": 1792085537.070476,
   "shown": [
     {
       "id": "8489597757",
@@ -117,6 +118,18 @@
       "title": "Slade wall of hits в Уфе",
       "price": 2000,
       "url": "https://www.avito.ru/ufa/kollektsionirovanie/slade_wall_of_hits_8315580073",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    },
+    {
+      "id": "8315607139",
+      "t": 1792085579,
+      "title": "Пластинки мюзикл три мушкетера 3LP в Уфе",
+      "price": 1200,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/plastinki_myuzikl_tri_mushketera_3lp_8315607139",
       "date": "1 час назад",
       "kind": "new",
       "q": false,
