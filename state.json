@@ -54,17 +54,18 @@
       "8296803799": 5350,
       "8482612184": 2000,
       "8389894768": 2500,
-      "8488896050": 4048
+      "8488896050": 4048,
+      "8512080815": 600
     }
   },
   "queue": [],
   "stats": {
     "since": 1792152879.4191318,
-    "checked": 50,
-    "new": 1,
-    "sent": 1,
+    "checked": 51,
+    "new": 2,
+    "sent": 2,
     "deals": 0,
-    "blocked": 7,
+    "blocked": 8,
     "errors": 0,
     "switches": 31,
     "stale": 2
@@ -73,8 +74,8 @@
   "fp": "safari",
   "fails": 1,
   "warned": false,
-  "cooldown_until": 1792168580.0537457,
-  "last_ok": 1792167516.832597,
+  "cooldown_until": 1792169755.7856095,
+  "last_ok": 1792168677.6767535,
   "shown": [
     {
       "id": "8389894768",
@@ -87,6 +88,32 @@
       "q": false,
       "s": "Винил",
       "fp": "fir"
+    },
+    {
+      "id": "8512080815",
+      "t": 1792168684,
+      "title": "Molnar dixieland band в Уфе",
+      "price": 600,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/molnar_dixieland_band_8512080815",
+      "date": "2 часа назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
     }
-  ]
+  ],
+  "sellers": {
+    "/brands/i319039206": {
+      "t": 1792168683.5144773,
+      "d": {
+        "items": 0,
+        "vinyl": 0,
+        "titles": [],
+        "company": true,
+        "reviews": 288,
+        "rating": "5,0",
+        "seller_name": "Балу"
+      }
+    }
+  }
 }
