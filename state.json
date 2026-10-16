@@ -60,21 +60,21 @@
   "queue": [],
   "stats": {
     "since": 1792132521.851615,
-    "checked": 51,
+    "checked": 52,
     "new": 3,
     "sent": 3,
     "deals": 0,
-    "blocked": 6,
+    "blocked": 7,
     "errors": 0,
     "switches": 35,
     "stale": 1
   },
   "last_report_date": "2026-10-16",
   "fp": "firefox",
-  "fails": 0,
+  "fails": 1,
   "warned": false,
-  "cooldown_until": 0,
-  "last_ok": 1792147746.2791154,
+  "cooldown_until": 1792149004.6214557,
+  "last_ok": 1792147909.3550842,
   "shown": [
     {
       "id": "8413807229",
