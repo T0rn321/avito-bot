@@ -50,25 +50,40 @@
       "8296803799": 5350,
       "8431363957": 6590,
       "8482612184": 2000,
-      "8489555820": 270
+      "8489555820": 270,
+      "8315421038": 1500
     }
   },
   "queue": [],
   "stats": {
     "since": 1792112849.151865,
-    "checked": 36,
-    "new": 0,
-    "sent": 0,
+    "checked": 40,
+    "new": 1,
+    "sent": 1,
     "deals": 0,
     "blocked": 3,
     "errors": 0,
     "stale": 1,
-    "switches": 25
+    "switches": 29
   },
   "last_report_date": "2026-10-16",
   "fp": "safari",
   "fails": 0,
   "warned": false,
   "cooldown_until": 0,
-  "last_ok": 1792121962.5576441
+  "last_ok": 1792122719.9736874,
+  "shown": [
+    {
+      "id": "8315421038",
+      "t": 1792122752,
+      "title": "Винил James Last Non stop Party 14“ в Уфе",
+      "price": 1500,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinil_james_last_non_stop_party_14_8315421038",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
+    }
+  ]
 }
