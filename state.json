@@ -53,27 +53,28 @@
       "8431363957": 6590,
       "8482612184": 2000,
       "8413807229": 50,
-      "8485192492": 1650
+      "8485192492": 1650,
+      "8431053859": 800
     }
   },
   "queue": [],
   "stats": {
     "since": 1792132521.851615,
-    "checked": 48,
-    "new": 2,
-    "sent": 2,
+    "checked": 51,
+    "new": 3,
+    "sent": 3,
     "deals": 0,
     "blocked": 6,
     "errors": 0,
-    "switches": 34,
+    "switches": 35,
     "stale": 1
   },
   "last_report_date": "2026-10-16",
-  "fp": "safari",
-  "fails": 1,
+  "fp": "firefox",
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792147322.340962,
-  "last_ok": 1792146218.1212523,
+  "cooldown_until": 0,
+  "last_ok": 1792147746.2791154,
   "shown": [
     {
       "id": "8413807229",
@@ -98,6 +99,34 @@
       "q": false,
       "s": "Винил",
       "fp": "edg"
+    },
+    {
+      "id": "8431053859",
+      "t": 1792147760,
+      "title": "Виниловая пластинка в Уфе",
+      "price": 800,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovaya_plastinka_8431053859",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
     }
-  ]
+  ],
+  "sellers": {
+    "/brands/ba0155cfe8b6d4dde7320738a56e1726": {
+      "t": 1792147758.1551442,
+      "d": {
+        "items": 0,
+        "vinyl": 0,
+        "titles": [],
+        "closed": 221,
+        "active": 15,
+        "company": true,
+        "reviews": 170,
+        "rating": "4,5",
+        "seller_name": "А-р"
+      }
+    }
+  }
 }
