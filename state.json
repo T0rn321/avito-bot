@@ -55,15 +55,16 @@
       "8482612184": 2000,
       "8389894768": 2500,
       "8488896050": 4048,
-      "8512080815": 600
+      "8512080815": 600,
+      "8369161737": 1200
     }
   },
   "queue": [],
   "stats": {
     "since": 1792152879.4191318,
-    "checked": 51,
-    "new": 2,
-    "sent": 2,
+    "checked": 53,
+    "new": 3,
+    "sent": 3,
     "deals": 0,
     "blocked": 8,
     "errors": 0,
@@ -72,10 +73,10 @@
   },
   "last_report_date": "2026-10-16",
   "fp": "safari",
-  "fails": 1,
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792169755.7856095,
-  "last_ok": 1792168677.6767535,
+  "cooldown_until": 0,
+  "last_ok": 1792169956.4541986,
   "shown": [
     {
       "id": "8389894768",
@@ -95,6 +96,18 @@
       "title": "Molnar dixieland band в Уфе",
       "price": 600,
       "url": "https://www.avito.ru/ufa/kollektsionirovanie/molnar_dixieland_band_8512080815",
+      "date": "2 часа назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
+    },
+    {
+      "id": "8369161737",
+      "t": 1792169828,
+      "title": "Edison fonograf album в Уфе",
+      "price": 1200,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/edison_fonograf_album_8369161737",
       "date": "2 часа назад",
       "kind": "new",
       "q": false,
