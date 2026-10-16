@@ -60,14 +60,14 @@
     "new": 0,
     "sent": 0,
     "deals": 0,
-    "blocked": 5,
+    "blocked": 6,
     "errors": 0,
     "switches": 17
   },
   "last_report_date": "2026-10-16",
   "fp": "firefox",
-  "fails": 1,
-  "warned": false,
-  "cooldown_until": 1792182147.1074212,
+  "fails": 2,
+  "warned": true,
+  "cooldown_until": 1792183992.725077,
   "last_ok": 1792181066.4231987
 }
