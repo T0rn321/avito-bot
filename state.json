@@ -62,15 +62,15 @@
     "new": 2,
     "sent": 2,
     "deals": 0,
-    "blocked": 10,
+    "blocked": 11,
     "errors": 0,
     "switches": 32
   },
   "last_report_date": "2026-10-17",
   "fp": "safari",
-  "fails": 1,
-  "warned": false,
-  "cooldown_until": 1792271462.652091,
+  "fails": 2,
+  "warned": true,
+  "cooldown_until": 1792273427.8556461,
   "last_ok": 1792270379.1307404,
   "shown": [
     {
