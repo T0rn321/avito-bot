@@ -51,15 +51,16 @@
       "8409472318": 2500,
       "8458844293": 550,
       "8482750494": 800,
-      "8485518931": 900
+      "8485518931": 900,
+      "8382543028": 700
     }
   },
   "queue": [],
   "stats": {
     "since": 1792234581.2850356,
-    "checked": 6,
-    "new": 0,
-    "sent": 0,
+    "checked": 8,
+    "new": 1,
+    "sent": 1,
     "deals": 0,
     "blocked": 3,
     "errors": 0,
@@ -68,8 +69,22 @@
   },
   "last_report_date": "2026-10-17",
   "fp": "safari",
-  "fails": 1,
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792238451.913928,
-  "last_ok": 1792237345.7882416
+  "cooldown_until": 0,
+  "last_ok": 1792238680.9086027,
+  "shown": [
+    {
+      "id": "8382543028",
+      "t": 1792238523,
+      "title": "Грампластинки из СССР в Уфе",
+      "price": 700,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/gramplastinki_iz_sssr_8382543028",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
+    }
+  ]
 }
