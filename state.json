@@ -63,21 +63,21 @@
   "queue": [],
   "stats": {
     "since": 1792234581.2850356,
-    "checked": 30,
+    "checked": 34,
     "new": 5,
     "sent": 5,
     "deals": 0,
     "blocked": 7,
     "errors": 0,
-    "switches": 17,
+    "switches": 20,
     "stale": 2
   },
   "last_report_date": "2026-10-17",
-  "fp": "safari",
+  "fp": "edge",
   "fails": 0,
   "warned": false,
   "cooldown_until": 0,
-  "last_ok": 1792247340.9813788,
+  "last_ok": 1792248062.511153,
   "shown": [
     {
       "id": "8382543028",
