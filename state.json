@@ -51,27 +51,27 @@
       "8413203761": 1500,
       "8316009779": 2200,
       "8512344754": 12000,
-      "8347440023": 0,
+      "8347440023": 20,
       "8387899938": 800
     }
   },
   "queue": [],
   "stats": {
     "since": 1792255016.6960123,
-    "checked": 35,
+    "checked": 38,
     "new": 2,
     "sent": 2,
     "deals": 0,
-    "blocked": 9,
+    "blocked": 10,
     "errors": 0,
-    "switches": 29
+    "switches": 32
   },
   "last_report_date": "2026-10-17",
   "fp": "safari",
-  "fails": 0,
+  "fails": 1,
   "warned": false,
-  "cooldown_until": 0,
-  "last_ok": 1792269890.6618807,
+  "cooldown_until": 1792271462.652091,
+  "last_ok": 1792270379.1307404,
   "shown": [
     {
       "id": "8387899938",
