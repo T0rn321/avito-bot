@@ -50,15 +50,16 @@
       "8391570079": 1200,
       "8407963381": 1100,
       "8408611362": 1000,
-      "8459722493": 1200
+      "8459722493": 1200,
+      "8340357319": 750
     }
   },
   "queue": [],
   "stats": {
     "since": 1792193708.758587,
-    "checked": 42,
-    "new": 0,
-    "sent": 0,
+    "checked": 43,
+    "new": 1,
+    "sent": 1,
     "deals": 0,
     "blocked": 10,
     "errors": 0,
@@ -66,8 +67,22 @@
   },
   "last_report_date": "2026-10-17",
   "fp": "safari",
-  "fails": 1,
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792211514.8839777,
-  "last_ok": 1792210423.1652467
+  "cooldown_until": 0,
+  "last_ok": 1792211594.0213704,
+  "shown": [
+    {
+      "id": "8340357319",
+      "t": 1792211621,
+      "title": "Виниловая пластинка Луи Армстронг в Уфе",
+      "price": 750,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovaya_plastinka_lui_armstrong_8340357319",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
+    }
+  ]
 }
