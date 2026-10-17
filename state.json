@@ -53,27 +53,31 @@
       "8482750494": 800,
       "8485518931": 900,
       "8382543028": 700,
-      "8408319105": 300
+      "8408319105": 300,
+      "8388125366": 770,
+      "8512560621": 1100,
+      "8366761170": 500,
+      "8441679662": 600
     }
   },
   "queue": [],
   "stats": {
     "since": 1792234581.2850356,
-    "checked": 18,
-    "new": 2,
-    "sent": 2,
+    "checked": 22,
+    "new": 5,
+    "sent": 5,
     "deals": 0,
     "blocked": 5,
     "errors": 0,
-    "switches": 10,
-    "stale": 1
+    "switches": 12,
+    "stale": 2
   },
   "last_report_date": "2026-10-17",
-  "fp": "safari",
-  "fails": 1,
+  "fp": "edge",
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792242489.1465614,
-  "last_ok": 1792241418.6679304,
+  "cooldown_until": 0,
+  "last_ok": 1792242995.9875185,
   "shown": [
     {
       "id": "8382543028",
@@ -98,6 +102,42 @@
       "q": false,
       "s": "Винил",
       "fp": "chr"
+    },
+    {
+      "id": "8388125366",
+      "t": 1792242525,
+      "title": "Пластинка Мэри Поппинс,до свидания в Уфе",
+      "price": 770,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/plastinka_meri_poppinsdo_svidaniya_8388125366",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
+    },
+    {
+      "id": "8512560621",
+      "t": 1792242845,
+      "title": "Пластинки Адриано Челентано в Уфе",
+      "price": 1100,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/plastinki_adriano_chelentano_8512560621",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    },
+    {
+      "id": "8366761170",
+      "t": 1792243030,
+      "title": "Пластинка Модерн Токинг СССР в Уфе",
+      "price": 500,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/plastinka_modern_toking_sssr_8366761170",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
     }
   ]
 }
