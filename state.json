@@ -51,17 +51,18 @@
       "8378771709": 500,
       "8391570079": 1200,
       "8407963381": 1100,
-      "8388602279": 2707
+      "8388602279": 2707,
+      "8405122082": 400
     }
   },
   "queue": [],
   "stats": {
     "since": 1792214218.6632926,
-    "checked": 21,
-    "new": 2,
-    "sent": 2,
+    "checked": 22,
+    "new": 3,
+    "sent": 3,
     "deals": 0,
-    "blocked": 6,
+    "blocked": 7,
     "errors": 0,
     "switches": 15
   },
@@ -69,8 +70,8 @@
   "fp": "safari",
   "fails": 1,
   "warned": false,
-  "cooldown_until": 1792224803.6250062,
-  "last_ok": 1792223716.3614748,
+  "cooldown_until": 1792225906.876425,
+  "last_ok": 1792224828.0527735,
   "shown": [
     {
       "id": "8340357319",
@@ -95,6 +96,18 @@
       "q": false,
       "s": "Винил",
       "fp": "chr"
+    },
+    {
+      "id": "8405122082",
+      "t": 1792224855,
+      "title": "Пластинки Шансон /Ундров, Днепров в Уфе",
+      "price": 400,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/plastinki_shanson_undrov_dneprov_8405122082",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
     }
   ]
 }
