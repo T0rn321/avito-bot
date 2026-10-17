@@ -58,11 +58,11 @@
   "queue": [],
   "stats": {
     "since": 1792193708.758587,
-    "checked": 46,
+    "checked": 47,
     "new": 1,
     "sent": 1,
     "deals": 0,
-    "blocked": 11,
+    "blocked": 12,
     "errors": 0,
     "switches": 30
   },
@@ -70,8 +70,8 @@
   "fp": "firefox",
   "fails": 1,
   "warned": false,
-  "cooldown_until": 1792213163.001054,
-  "last_ok": 1792212107.318674,
+  "cooldown_until": 1792214270.2429998,
+  "last_ok": 1792213182.0929513,
   "shown": [
     {
       "id": "8340357319",
