@@ -50,24 +50,52 @@
       "8525127352": 23000,
       "8413203761": 1500,
       "8316009779": 2200,
-      "8512344754": 12000
+      "8512344754": 12000,
+      "8347440023": 0,
+      "8387899938": 800
     }
   },
   "queue": [],
   "stats": {
     "since": 1792255016.6960123,
-    "checked": 17,
-    "new": 0,
-    "sent": 0,
+    "checked": 21,
+    "new": 2,
+    "sent": 2,
     "deals": 0,
     "blocked": 5,
     "errors": 0,
-    "switches": 13
+    "switches": 17
   },
   "last_report_date": "2026-10-17",
-  "fp": "firefox",
-  "fails": 1,
+  "fp": "safari",
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792262826.4867296,
-  "last_ok": 1792261728.5755048
+  "cooldown_until": 0,
+  "last_ok": 1792263502.460028,
+  "shown": [
+    {
+      "id": "8387899938",
+      "t": 1792263353,
+      "title": "Заказ для Алексея Чайковский - Симфония № 6 в Уфе",
+      "price": 800,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/zakaz_dlya_alekseya_chaykovskiy_-_simfoniya_6_8387899938",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
+    },
+    {
+      "id": "8347440023",
+      "t": 1792263358,
+      "title": "Виниловые пластинки в Уфе",
+      "price": 0,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_8347440023",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
+    }
+  ]
 }
