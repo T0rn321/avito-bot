@@ -56,7 +56,7 @@
   "queue": [],
   "stats": {
     "since": 1792193708.758587,
-    "checked": 14,
+    "checked": 17,
     "new": 0,
     "sent": 0,
     "deals": 0,
@@ -66,8 +66,8 @@
   },
   "last_report_date": "2026-10-17",
   "fp": "firefox",
-  "fails": 1,
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792200304.495781,
-  "last_ok": 1792199201.2461782
+  "cooldown_until": 0,
+  "last_ok": 1792200710.3061883
 }
