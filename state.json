@@ -56,7 +56,7 @@
   "queue": [],
   "stats": {
     "since": 1792193708.758587,
-    "checked": 20,
+    "checked": 21,
     "new": 0,
     "sent": 0,
     "deals": 0,
@@ -66,8 +66,8 @@
   },
   "last_report_date": "2026-10-17",
   "fp": "safari",
-  "fails": 1,
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792203402.6832068,
-  "last_ok": 1792202307.5078032
+  "cooldown_until": 0,
+  "last_ok": 1792203594.9695458
 }
