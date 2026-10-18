@@ -51,24 +51,53 @@
       "8467551841": 2600,
       "8525127352": 23000,
       "8413203761": 1500,
-      "8525070611": 3330
+      "8525070611": 3330,
+      "8366802613": 1000
     }
   },
   "queue": [],
   "stats": {
     "since": 1792295835.3783731,
-    "checked": 44,
-    "new": 0,
-    "sent": 0,
+    "checked": 45,
+    "new": 1,
+    "sent": 1,
     "deals": 0,
     "blocked": 11,
     "errors": 0,
-    "switches": 25
+    "switches": 26
   },
   "last_report_date": "2026-10-18",
-  "fp": "chrome",
-  "fails": 1,
+  "fp": "safari",
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792315358.4290037,
-  "last_ok": 1792314283.6349373
+  "cooldown_until": 0,
+  "last_ok": 1792315360.6692994,
+  "sellers": {
+    "/brands/0e383e8641f75aa71ca7a6f23ce3c74a": {
+      "t": 1792315383.180214,
+      "d": {
+        "items": 0,
+        "vinyl": 0,
+        "titles": [],
+        "company": true,
+        "reviews": 23,
+        "rating": "5,0",
+        "seller_name": "ИСКАНДЕР"
+      }
+    }
+  },
+  "shown": [
+    {
+      "id": "8366802613",
+      "t": 1792315385,
+      "title": "Виниловые пластинки в Уфе",
+      "price": 1000,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_8366802613",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
+    }
+  ]
 }
