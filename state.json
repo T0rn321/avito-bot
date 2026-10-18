@@ -58,26 +58,27 @@
       "8405047466": 450,
       "8512491842": 350,
       "8391441358": 300,
-      "8419936340": 300
+      "8419936340": 300,
+      "8340312805": 900
     }
   },
   "queue": [],
   "stats": {
     "since": 1792316239.8752296,
-    "checked": 33,
-    "new": 8,
-    "sent": 8,
+    "checked": 37,
+    "new": 9,
+    "sent": 9,
     "deals": 0,
     "blocked": 9,
     "errors": 1,
-    "switches": 19
+    "switches": 21
   },
   "last_report_date": "2026-10-18",
-  "fp": "firefox",
-  "fails": 1,
+  "fp": "chrome",
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792334329.018858,
-  "last_ok": 1792333225.944111,
+  "cooldown_until": 0,
+  "last_ok": 1792334914.659283,
   "shown": [
     {
       "id": "8512356776",
@@ -174,6 +175,18 @@
       "q": false,
       "s": "Винил",
       "fp": "edg"
+    },
+    {
+      "id": "8340312805",
+      "t": 1792334763,
+      "title": "Заказ для Игоря - пластинки с классикой в Уфе",
+      "price": 900,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/zakaz_dlya_igorya_-_plastinki_s_klassikoy_8340312805",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
     }
   ],
   "sellers": {
