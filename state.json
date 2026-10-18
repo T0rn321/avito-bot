@@ -51,26 +51,27 @@
       "8366504654": 543,
       "8467101522": 1100,
       "8413641728": 3300,
-      "8512356776": 1700
+      "8512356776": 1700,
+      "8390877671": 700
     }
   },
   "queue": [],
   "stats": {
     "since": 1792316239.8752296,
-    "checked": 21,
-    "new": 1,
-    "sent": 1,
+    "checked": 24,
+    "new": 2,
+    "sent": 2,
     "deals": 0,
-    "blocked": 3,
+    "blocked": 4,
     "errors": 1,
-    "switches": 13
+    "switches": 14
   },
   "last_report_date": "2026-10-18",
-  "fp": "firefox",
-  "fails": 0,
+  "fp": "safari",
+  "fails": 1,
   "warned": false,
-  "cooldown_until": 0,
-  "last_ok": 1792324196.9908,
+  "cooldown_until": 1792325802.1281807,
+  "last_ok": 1792324714.5627193,
   "shown": [
     {
       "id": "8512356776",
@@ -83,6 +84,18 @@
       "q": false,
       "s": "Винил",
       "fp": "fir"
+    },
+    {
+      "id": "8390877671",
+      "t": 1792324542,
+      "title": "Заказ для Татьяны - Вивальди - Времена года в Уфе",
+      "price": 700,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/zakaz_dlya_tatyany_-_vivaldi_-_vremena_goda_8390877671",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
     }
   ]
 }
