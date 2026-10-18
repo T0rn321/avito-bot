@@ -52,26 +52,30 @@
       "8467101522": 1100,
       "8413641728": 3300,
       "8512356776": 1700,
-      "8390877671": 700
+      "8390877671": 700,
+      "8369497740": 500,
+      "8346914791": 400,
+      "8405047466": 450,
+      "8512491842": 350
     }
   },
   "queue": [],
   "stats": {
     "since": 1792316239.8752296,
-    "checked": 24,
-    "new": 2,
-    "sent": 2,
+    "checked": 27,
+    "new": 6,
+    "sent": 6,
     "deals": 0,
     "blocked": 4,
     "errors": 1,
-    "switches": 14
+    "switches": 15
   },
   "last_report_date": "2026-10-18",
-  "fp": "safari",
-  "fails": 1,
+  "fp": "edge",
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792325802.1281807,
-  "last_ok": 1792324714.5627193,
+  "cooldown_until": 0,
+  "last_ok": 1792326317.8857424,
   "shown": [
     {
       "id": "8512356776",
@@ -96,6 +100,54 @@
       "q": false,
       "s": "Винил",
       "fp": "saf"
+    },
+    {
+      "id": "8346914791",
+      "t": 1792326001,
+      "title": "Юрий Лоза вся жизнь дорога в Уфе",
+      "price": 400,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/yuriy_loza_vsya_zhizn_doroga_8346914791",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
+    },
+    {
+      "id": "8369497740",
+      "t": 1792326003,
+      "title": "Танцуем Ламбаду в Уфе",
+      "price": 500,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/tantsuem_lambadu_8369497740",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
+    },
+    {
+      "id": "8405047466",
+      "t": 1792326173,
+      "title": "Ян Табачник который час в Уфе",
+      "price": 450,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/yan_tabachnik_kotoryy_chas_8405047466",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
+    },
+    {
+      "id": "8512491842",
+      "t": 1792326356,
+      "title": "Евгений Фокин в Уфе",
+      "price": 350,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/evgeniy_fokin_8512491842",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
     }
   ]
 }
