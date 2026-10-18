@@ -56,26 +56,27 @@
       "8369497740": 500,
       "8346914791": 400,
       "8405047466": 450,
-      "8512491842": 350
+      "8512491842": 350,
+      "8391441358": 300
     }
   },
   "queue": [],
   "stats": {
     "since": 1792316239.8752296,
-    "checked": 27,
-    "new": 6,
-    "sent": 6,
+    "checked": 29,
+    "new": 7,
+    "sent": 7,
     "deals": 0,
-    "blocked": 4,
+    "blocked": 5,
     "errors": 1,
-    "switches": 15
+    "switches": 16
   },
   "last_report_date": "2026-10-18",
-  "fp": "edge",
-  "fails": 0,
+  "fp": "firefox",
+  "fails": 1,
   "warned": false,
-  "cooldown_until": 0,
-  "last_ok": 1792326317.8857424,
+  "cooldown_until": 1792327731.0567627,
+  "last_ok": 1792326661.2806847,
   "shown": [
     {
       "id": "8512356776",
@@ -143,6 +144,18 @@
       "title": "Евгений Фокин в Уфе",
       "price": 350,
       "url": "https://www.avito.ru/ufa/kollektsionirovanie/evgeniy_fokin_8512491842",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
+    },
+    {
+      "id": "8391441358",
+      "t": 1792326510,
+      "title": "Вячеслав Добрынин на теплоходе музыка играет в Уфе",
+      "price": 300,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vyacheslav_dobrynin_na_teplohode_muzyka_igraet_8391441358",
       "date": "1 час назад",
       "kind": "new",
       "q": false,
