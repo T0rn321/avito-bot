@@ -57,26 +57,27 @@
       "8346914791": 400,
       "8405047466": 450,
       "8512491842": 350,
-      "8391441358": 300
+      "8391441358": 300,
+      "8419936340": 300
     }
   },
   "queue": [],
   "stats": {
     "since": 1792316239.8752296,
-    "checked": 29,
-    "new": 7,
-    "sent": 7,
+    "checked": 31,
+    "new": 8,
+    "sent": 8,
     "deals": 0,
     "blocked": 6,
     "errors": 1,
-    "switches": 16
+    "switches": 18
   },
   "last_report_date": "2026-10-18",
-  "fp": "firefox",
-  "fails": 2,
-  "warned": true,
-  "cooldown_until": 1792329540.0209324,
-  "last_ok": 1792326661.2806847,
+  "fp": "safari",
+  "fails": 0,
+  "warned": false,
+  "cooldown_until": 0,
+  "last_ok": 1792329842.3846643,
   "shown": [
     {
       "id": "8512356776",
@@ -161,6 +162,32 @@
       "q": false,
       "s": "Винил",
       "fp": "edg"
+    },
+    {
+      "id": "8419936340",
+      "t": 1792329683,
+      "title": "Любовь река (сборник) в Уфе",
+      "price": 300,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/lyubov_reka_sbornik_8419936340",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
     }
-  ]
+  ],
+  "sellers": {
+    "/brands/i319039206": {
+      "t": 1792329682.3299654,
+      "d": {
+        "items": 0,
+        "vinyl": 0,
+        "titles": [],
+        "company": true,
+        "reviews": 289,
+        "rating": "5,0",
+        "seller_name": "Балу"
+      }
+    }
+  }
 }
