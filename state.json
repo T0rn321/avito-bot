@@ -50,15 +50,16 @@
       "8431097844": 6000,
       "8366504654": 543,
       "8467101522": 1100,
-      "8413641728": 3300
+      "8413641728": 3300,
+      "8512356776": 1700
     }
   },
   "queue": [],
   "stats": {
     "since": 1792316239.8752296,
-    "checked": 20,
-    "new": 0,
-    "sent": 0,
+    "checked": 21,
+    "new": 1,
+    "sent": 1,
     "deals": 0,
     "blocked": 3,
     "errors": 1,
@@ -66,8 +67,22 @@
   },
   "last_report_date": "2026-10-18",
   "fp": "firefox",
-  "fails": 2,
-  "warned": true,
-  "cooldown_until": 1792324032.8426645,
-  "last_ok": 1792320966.8111732
+  "fails": 0,
+  "warned": false,
+  "cooldown_until": 0,
+  "last_ok": 1792324196.9908,
+  "shown": [
+    {
+      "id": "8512356776",
+      "t": 1792324231,
+      "title": "Заказ для Марии - пластинки с органной музыкой в Уфе",
+      "price": 1700,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/zakaz_dlya_marii_-_plastinki_s_organnoy_muzykoy_8512356776",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    }
+  ]
 }
