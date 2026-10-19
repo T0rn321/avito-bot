@@ -50,15 +50,16 @@
       "8315580073": 2000,
       "8512610852": 1500,
       "8489597757": 2500,
-      "8512712504": 350
+      "8512712504": 350,
+      "8482202183": 800
     }
   },
   "queue": [],
   "stats": {
     "since": 1792399065.8146667,
-    "checked": 14,
-    "new": 0,
-    "sent": 0,
+    "checked": 15,
+    "new": 1,
+    "sent": 1,
     "deals": 0,
     "blocked": 6,
     "errors": 2,
@@ -66,8 +67,22 @@
   },
   "last_report_date": "2026-10-19",
   "fp": "firefox",
-  "fails": 1,
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792408907.1030211,
-  "last_ok": 1792407811.8206122
+  "cooldown_until": 0,
+  "last_ok": 1792409065.1610415,
+  "shown": [
+    {
+      "id": "8482202183",
+      "t": 1792409075,
+      "title": "Ария Герой асфальта. Мелодия 1988 год в Уфе",
+      "price": 800,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/ariya_geroy_asfalta._melodiya_1988_god_8482202183",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    }
+  ]
 }
