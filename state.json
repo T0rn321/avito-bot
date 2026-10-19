@@ -66,15 +66,16 @@
       "8316009779": 2200,
       "8512344754": 12000,
       "8458842804": 53533,
-      "8458268493": 50000
+      "8458268493": 50000,
+      "8340078212": 400
     }
   },
   "queue": [],
   "stats": {
     "since": 1792419481.4281359,
-    "checked": 14,
-    "new": 2,
-    "sent": 2,
+    "checked": 15,
+    "new": 3,
+    "sent": 3,
     "deals": 0,
     "blocked": 6,
     "errors": 0,
@@ -83,10 +84,10 @@
   },
   "last_report_date": "2026-10-19",
   "fp": "firefox",
-  "fails": 1,
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792428724.4888978,
-  "last_ok": 1792427639.7024782,
+  "cooldown_until": 0,
+  "last_ok": 1792428779.0655842,
   "sellers": {},
   "shown": [
     {
@@ -112,6 +113,18 @@
       "q": false,
       "s": "Винил",
       "fp": "edg"
+    },
+    {
+      "id": "8340078212",
+      "t": 1792428807,
+      "title": "Джаз 65 в Уфе",
+      "price": 400,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/dzhaz_65_8340078212",
+      "date": "3 часа назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
     }
   ]
 }
