@@ -50,24 +50,53 @@
       "8441679662": 600,
       "8315580073": 2000,
       "8512610852": 1500,
-      "8489597757": 2500
+      "8489597757": 2500,
+      "8347507841": 500,
+      "8431561722": 2000
     }
   },
   "queue": [],
   "stats": {
     "since": 1792419481.4281359,
-    "checked": 6,
-    "new": 0,
-    "sent": 0,
+    "checked": 7,
+    "new": 2,
+    "sent": 2,
     "deals": 0,
     "blocked": 3,
     "errors": 0,
-    "switches": 5
+    "switches": 6
   },
   "last_report_date": "2026-10-19",
-  "fp": "firefox",
-  "fails": 1,
+  "fp": "edge",
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792424392.2392533,
-  "last_ok": 1792423292.7772012
+  "cooldown_until": 0,
+  "last_ok": 1792424451.1986027,
+  "sellers": {},
+  "shown": [
+    {
+      "id": "8431561722",
+      "t": 1792424494,
+      "title": "Жанна Агузарова в Уфе",
+      "price": 2000,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/zhanna_aguzarova_8431561722",
+      "date": "2 часа назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
+    },
+    {
+      "id": "8347507841",
+      "t": 1792424495,
+      "title": "Каунт Бейси и семеро из канзас-сити в Уфе",
+      "price": 500,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/kaunt_beysi_i_semero_iz_kanzas-siti_8347507841",
+      "date": "2 часа назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
+    }
+  ]
 }
