@@ -106,19 +106,19 @@
   "queue": [],
   "stats": {
     "since": 1792358285.1948972,
-    "checked": 41,
+    "checked": 42,
     "new": 0,
     "sent": 0,
     "deals": 0,
     "blocked": 8,
     "errors": 8,
     "stale": 50,
-    "switches": 18
+    "switches": 19
   },
   "last_report_date": "2026-10-19",
-  "fp": "firefox",
-  "fails": 1,
+  "fp": "edge",
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792375521.520315,
-  "last_ok": 1792374459.4918797
+  "cooldown_until": 0,
+  "last_ok": 1792375691.480979
 }
