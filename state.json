@@ -67,27 +67,28 @@
       "8512344754": 12000,
       "8458842804": 53533,
       "8458268493": 50000,
-      "8340078212": 400
+      "8340078212": 400,
+      "8471230226": 2000
     }
   },
   "queue": [],
   "stats": {
     "since": 1792419481.4281359,
-    "checked": 17,
-    "new": 3,
-    "sent": 3,
+    "checked": 18,
+    "new": 4,
+    "sent": 4,
     "deals": 0,
-    "blocked": 8,
+    "blocked": 9,
     "errors": 0,
-    "switches": 12,
+    "switches": 13,
     "stale": 14
   },
   "last_report_date": "2026-10-19",
-  "fp": "firefox",
-  "fails": 2,
-  "warned": true,
-  "cooldown_until": 1792432020.50856,
-  "last_ok": 1792429134.084363,
+  "fp": "edge",
+  "fails": 1,
+  "warned": false,
+  "cooldown_until": 1792433208.8575969,
+  "last_ok": 1792432115.1300488,
   "sellers": {},
   "shown": [
     {
@@ -125,6 +126,18 @@
       "q": false,
       "s": "Винил",
       "fp": "fir"
+    },
+    {
+      "id": "8471230226",
+      "t": 1792432142,
+      "title": "Ария Игра с огнём. Мелодия 1990 год в Уфе",
+      "price": 2000,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/ariya_igra_s_ognem._melodiya_1990_god_8471230226",
+      "date": "3 часа назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
     }
   ]
 }
