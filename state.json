@@ -57,19 +57,19 @@
   "queue": [],
   "stats": {
     "since": 1792439899.4771538,
-    "checked": 49,
+    "checked": 53,
     "new": 0,
     "sent": 0,
     "deals": 0,
     "blocked": 9,
     "errors": 0,
-    "switches": 38,
+    "switches": 42,
     "stale": 1
   },
   "last_report_date": "2026-10-20",
-  "fp": "safari",
+  "fp": "chrome",
   "fails": 0,
   "warned": false,
   "cooldown_until": 0,
-  "last_ok": 1792457407.8284109
+  "last_ok": 1792458110.4727337
 }
