@@ -50,24 +50,39 @@
       "8485192492": 1650,
       "8413807229": 50,
       "8315421038": 1500,
-      "8441679662": 600
+      "8441679662": 600,
+      "8458816188": 1235
     }
   },
   "queue": [],
   "stats": {
     "since": 1792460350.056218,
-    "checked": 5,
-    "new": 0,
-    "sent": 0,
+    "checked": 8,
+    "new": 1,
+    "sent": 1,
     "deals": 0,
     "blocked": 2,
     "errors": 0,
-    "switches": 4
+    "switches": 5
   },
   "last_report_date": "2026-10-20",
-  "fp": "firefox",
-  "fails": 1,
+  "fp": "edge",
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792463162.3519216,
-  "last_ok": 1792462074.1912177
+  "cooldown_until": 0,
+  "last_ok": 1792463632.3730423,
+  "shown": [
+    {
+      "id": "8458816188",
+      "t": 1792463339,
+      "title": "Заказ для Юрия - пластинки Пугачева, Форум, Пламя в Уфе",
+      "price": 1235,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/zakaz_dlya_yuriya_-_plastinki_pugacheva_forum_plamya_8458816188",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    }
+  ]
 }
