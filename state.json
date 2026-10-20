@@ -50,23 +50,38 @@
       "8389894768": 2500,
       "8431053859": 800,
       "8485192492": 1650,
-      "8413807229": 50
+      "8413807229": 50,
+      "8420764712": 400
     }
   },
   "queue": [],
   "stats": {
     "since": 1792501212.9916003,
-    "checked": 1,
-    "new": 0,
-    "sent": 0,
+    "checked": 2,
+    "new": 1,
+    "sent": 1,
     "deals": 0,
-    "blocked": 1,
+    "blocked": 2,
     "errors": 0
   },
   "last_report_date": "2026-10-20",
   "fp": "firefox",
   "fails": 1,
   "warned": false,
-  "cooldown_until": 1792502302.4164352,
-  "last_ok": 1792501216.370282
+  "cooldown_until": 1792503401.164175,
+  "last_ok": 1792502304.6840873,
+  "shown": [
+    {
+      "id": "8420764712",
+      "t": 1792502335,
+      "title": "Виниловые пластинки в Уфе",
+      "price": 400,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_8420764712",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    }
+  ]
 }
