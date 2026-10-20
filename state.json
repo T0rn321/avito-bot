@@ -59,11 +59,11 @@
   "queue": [],
   "stats": {
     "since": 1792460350.056218,
-    "checked": 46,
+    "checked": 47,
     "new": 1,
     "sent": 1,
     "deals": 0,
-    "blocked": 9,
+    "blocked": 10,
     "errors": 0,
     "switches": 29,
     "stale": 2
@@ -72,8 +72,8 @@
   "fp": "chrome",
   "fails": 1,
   "warned": false,
-  "cooldown_until": 1792477593.7659945,
-  "last_ok": 1792476536.2135932,
+  "cooldown_until": 1792478812.7947567,
+  "last_ok": 1792477742.6563268,
   "shown": [
     {
       "id": "8458816188",
