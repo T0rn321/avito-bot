@@ -53,26 +53,27 @@
       "8413807229": 50,
       "8420764712": 400,
       "8512324544": 12000,
-      "8459246104": 830
+      "8459246104": 830,
+      "8408835990": 700
     }
   },
   "queue": [],
   "stats": {
     "since": 1792501212.9916003,
-    "checked": 27,
-    "new": 2,
-    "sent": 2,
+    "checked": 28,
+    "new": 3,
+    "sent": 3,
     "deals": 0,
     "blocked": 12,
     "errors": 0,
-    "switches": 18
+    "switches": 19
   },
   "last_report_date": "2026-10-20",
-  "fp": "safari",
-  "fails": 1,
+  "fp": "firefox",
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792518901.9843423,
-  "last_ok": 1792517849.8740537,
+  "cooldown_until": 0,
+  "last_ok": 1792519071.8645031,
   "shown": [
     {
       "id": "8420764712",
@@ -97,6 +98,18 @@
       "q": false,
       "s": "Винил",
       "fp": "saf"
+    },
+    {
+      "id": "8408835990",
+      "t": 1792519099,
+      "title": "Пластинки Сказка Снежная королева в Уфе",
+      "price": 700,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/plastinki_skazka_snezhnaya_koroleva_8408835990",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
     }
   ]
 }
