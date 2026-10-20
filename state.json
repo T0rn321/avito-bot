@@ -63,15 +63,15 @@
     "new": 3,
     "sent": 3,
     "deals": 0,
-    "blocked": 12,
+    "blocked": 13,
     "errors": 0,
     "switches": 29
   },
   "last_report_date": "2026-10-20",
   "fp": "firefox",
-  "fails": 1,
-  "warned": false,
-  "cooldown_until": 1792499905.3204393,
+  "fails": 2,
+  "warned": true,
+  "cooldown_until": 1792501761.184008,
   "last_ok": 1792498827.4045691,
   "sellers": {
     "/brands/7a29f18158b2c11f4e5358b0a8a28425": {
