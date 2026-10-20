@@ -60,14 +60,14 @@
     "new": 0,
     "sent": 0,
     "deals": 0,
-    "blocked": 2,
+    "blocked": 3,
     "errors": 1,
     "switches": 1
   },
   "last_report_date": "2026-10-20",
   "fp": "chrome",
-  "fails": 2,
+  "fails": 3,
   "warned": true,
-  "cooldown_until": 1792524912.399834,
+  "cooldown_until": 1792528555.1111069,
   "last_ok": 1792521817.1518025
 }
