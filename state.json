@@ -52,26 +52,27 @@
       "8315580073": 2000,
       "8512610852": 1500,
       "8482462384": 1000,
-      "8382386872": 2000
+      "8382386872": 2000,
+      "8440918716": 150
     }
   },
   "queue": [],
   "stats": {
     "since": 1792480683.6679046,
-    "checked": 29,
-    "new": 2,
-    "sent": 2,
+    "checked": 31,
+    "new": 3,
+    "sent": 3,
     "deals": 0,
-    "blocked": 9,
+    "blocked": 10,
     "errors": 0,
-    "switches": 24
+    "switches": 26
   },
   "last_report_date": "2026-10-20",
   "fp": "firefox",
-  "fails": 0,
+  "fails": 1,
   "warned": false,
-  "cooldown_until": 0,
-  "last_ok": 1792494820.8574371,
+  "cooldown_until": 1792496258.6174912,
+  "last_ok": 1792495183.585368,
   "sellers": {
     "/brands/7a29f18158b2c11f4e5358b0a8a28425": {
       "t": 1792493427.864715,
@@ -105,6 +106,18 @@
       "title": "Виниловая пластинка Комбинация в Уфе",
       "price": 1000,
       "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovaya_plastinka_kombinatsiya_8482462384",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    },
+    {
+      "id": "8440918716",
+      "t": 1792495214,
+      "title": "Виниловые пластинки СССР в Уфе",
+      "price": 150,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_sssr_8440918716",
       "date": "1 час назад",
       "kind": "new",
       "q": false,
