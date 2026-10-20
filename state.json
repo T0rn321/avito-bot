@@ -52,15 +52,16 @@
       "8485192492": 1650,
       "8413807229": 50,
       "8420764712": 400,
-      "8512324544": 12000
+      "8512324544": 12000,
+      "8459246104": 830
     }
   },
   "queue": [],
   "stats": {
     "since": 1792501212.9916003,
-    "checked": 25,
-    "new": 1,
-    "sent": 1,
+    "checked": 26,
+    "new": 2,
+    "sent": 2,
     "deals": 0,
     "blocked": 11,
     "errors": 0,
@@ -68,10 +69,10 @@
   },
   "last_report_date": "2026-10-20",
   "fp": "safari",
-  "fails": 1,
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792517542.288682,
-  "last_ok": 1792516448.7608793,
+  "cooldown_until": 0,
+  "last_ok": 1792517665.9762676,
   "shown": [
     {
       "id": "8420764712",
@@ -84,6 +85,18 @@
       "q": false,
       "s": "Винил",
       "fp": "fir"
+    },
+    {
+      "id": "8459246104",
+      "t": 1792517694,
+      "title": "Пластинка Муслим Магомаев в Уфе",
+      "price": 830,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/plastinka_muslim_magomaev_8459246104",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
     }
   ]
 }
