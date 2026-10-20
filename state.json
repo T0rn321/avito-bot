@@ -59,20 +59,20 @@
   "queue": [],
   "stats": {
     "since": 1792480683.6679046,
-    "checked": 31,
+    "checked": 33,
     "new": 3,
     "sent": 3,
     "deals": 0,
     "blocked": 11,
     "errors": 0,
-    "switches": 26
+    "switches": 27
   },
   "last_report_date": "2026-10-20",
-  "fp": "firefox",
-  "fails": 2,
-  "warned": true,
-  "cooldown_until": 1792498249.9112775,
-  "last_ok": 1792495183.585368,
+  "fp": "safari",
+  "fails": 0,
+  "warned": false,
+  "cooldown_until": 0,
+  "last_ok": 1792498449.3519294,
   "sellers": {
     "/brands/7a29f18158b2c11f4e5358b0a8a28425": {
       "t": 1792493427.864715,
