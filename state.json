@@ -50,24 +50,66 @@
       "8315421038": 1500,
       "8441679662": 600,
       "8315580073": 2000,
-      "8512610852": 1500
+      "8512610852": 1500,
+      "8482462384": 1000,
+      "8382386872": 2000
     }
   },
   "queue": [],
   "stats": {
     "since": 1792480683.6679046,
-    "checked": 25,
-    "new": 0,
-    "sent": 0,
+    "checked": 26,
+    "new": 2,
+    "sent": 2,
     "deals": 0,
     "blocked": 8,
     "errors": 0,
-    "switches": 20
+    "switches": 21
   },
   "last_report_date": "2026-10-20",
-  "fp": "safari",
-  "fails": 1,
+  "fp": "firefox",
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792493249.1615362,
-  "last_ok": 1792492170.7798507
+  "cooldown_until": 0,
+  "last_ok": 1792493378.1217782,
+  "sellers": {
+    "/brands/7a29f18158b2c11f4e5358b0a8a28425": {
+      "t": 1792493427.864715,
+      "d": {
+        "items": 0,
+        "vinyl": 0,
+        "titles": [],
+        "company": true,
+        "reviews": 475,
+        "rating": "5,0",
+        "seller_name": "Ильдар"
+      }
+    }
+  },
+  "shown": [
+    {
+      "id": "8382386872",
+      "t": 1792493433,
+      "title": "Виниловые пластинки Журавлева в Уфе",
+      "price": 2000,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_zhuravleva_8382386872",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    },
+    {
+      "id": "8482462384",
+      "t": 1792493434,
+      "title": "Виниловая пластинка Комбинация в Уфе",
+      "price": 1000,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovaya_plastinka_kombinatsiya_8482462384",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    }
+  ]
 }
