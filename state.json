@@ -63,16 +63,16 @@
     "new": 1,
     "sent": 1,
     "deals": 0,
-    "blocked": 10,
+    "blocked": 11,
     "errors": 0,
     "switches": 29,
     "stale": 2
   },
   "last_report_date": "2026-10-20",
   "fp": "chrome",
-  "fails": 1,
-  "warned": false,
-  "cooldown_until": 1792478812.7947567,
+  "fails": 2,
+  "warned": true,
+  "cooldown_until": 1792480626.7235124,
   "last_ok": 1792477742.6563268,
   "shown": [
     {
