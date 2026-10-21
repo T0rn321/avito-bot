@@ -50,24 +50,39 @@
       "8408319105": 300,
       "8382543028": 700,
       "8545207607": 1650,
-      "8525057590": 10990
+      "8525057590": 10990,
+      "8367932572": 1757
     }
   },
   "queue": [],
   "stats": {
     "since": 1792541954.6217563,
-    "checked": 39,
-    "new": 0,
-    "sent": 0,
+    "checked": 41,
+    "new": 1,
+    "sent": 1,
     "deals": 0,
-    "blocked": 9,
+    "blocked": 10,
     "errors": 1,
-    "switches": 27
+    "switches": 28
   },
   "last_report_date": "2026-10-21",
-  "fp": "chrome",
+  "fp": "safari",
   "fails": 1,
   "warned": false,
-  "cooldown_until": 1792559530.9853408,
-  "last_ok": 1792558460.8014178
+  "cooldown_until": 1792560931.357916,
+  "last_ok": 1792559855.7708485,
+  "shown": [
+    {
+      "id": "8367932572",
+      "t": 1792559708,
+      "title": "Заказ для Алексея - виниловые пластинки в Уфе",
+      "price": 1757,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/zakaz_dlya_alekseya_-_vinilovye_plastinki_8367932572",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "chr"
+    }
+  ]
 }
