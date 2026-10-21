@@ -65,21 +65,21 @@
   "queue": [],
   "stats": {
     "since": 1792582871.921895,
-    "checked": 30,
+    "checked": 34,
     "new": 6,
     "sent": 6,
     "deals": 0,
     "blocked": 10,
     "errors": 0,
-    "switches": 23,
+    "switches": 26,
     "stale": 1
   },
   "last_report_date": "2026-10-21",
-  "fp": "chrome",
+  "fp": "edge",
   "fails": 0,
   "warned": false,
   "cooldown_until": 0,
-  "last_ok": 1792601449.4510503,
+  "last_ok": 1792602174.1586435,
   "sellers": {
     "/brands/i319039206": {
       "t": 1792600939.5024872,
