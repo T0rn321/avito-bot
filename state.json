@@ -65,21 +65,21 @@
   "queue": [],
   "stats": {
     "since": 1792582871.921895,
-    "checked": 34,
+    "checked": 35,
     "new": 6,
     "sent": 6,
     "deals": 0,
-    "blocked": 10,
+    "blocked": 11,
     "errors": 0,
-    "switches": 26,
+    "switches": 27,
     "stale": 1
   },
   "last_report_date": "2026-10-21",
-  "fp": "edge",
-  "fails": 0,
+  "fp": "firefox",
+  "fails": 1,
   "warned": false,
-  "cooldown_until": 0,
-  "last_ok": 1792602174.1586435,
+  "cooldown_until": 1792603405.1314602,
+  "last_ok": 1792602331.4371734,
   "sellers": {
     "/brands/i319039206": {
       "t": 1792600939.5024872,
