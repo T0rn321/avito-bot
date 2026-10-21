@@ -66,27 +66,30 @@
       "8315421038": 1500,
       "8441679662": 600,
       "8315580073": 2000,
-      "8512610852": 1500
+      "8512610852": 1500,
+      "8420374618": 2500,
+      "8370275016": 1600,
+      "8485127848": 1330
     }
   },
   "queue": [],
   "stats": {
     "since": 1792562346.9247398,
-    "checked": 20,
-    "new": 1,
-    "sent": 1,
+    "checked": 23,
+    "new": 4,
+    "sent": 4,
     "deals": 0,
     "blocked": 6,
     "errors": 0,
-    "switches": 15,
+    "switches": 17,
     "stale": 16
   },
   "last_report_date": "2026-10-21",
-  "fp": "safari",
-  "fails": 1,
-  "cooldown_until": 1792581676.1281192,
+  "fp": "chrome",
+  "fails": 0,
+  "cooldown_until": 0,
   "warned": false,
-  "last_ok": 1792580575.1983702,
+  "last_ok": 1792581997.0594845,
   "shown": [
     {
       "id": "8483183853",
@@ -99,6 +102,43 @@
       "q": false,
       "s": "Винил",
       "fp": "fir"
+    },
+    {
+      "id": "8370275016",
+      "t": 1792581735,
+      "title": "Виниловые пластинки Элтон Джон в Уфе",
+      "price": 1600,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_elton_dzhon_8370275016",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    },
+    {
+      "id": "8420374618",
+      "t": 1792581737,
+      "title": "Виниловая пластинка Парк Горького в Уфе",
+      "price": 2500,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovaya_plastinka_park_gorkogo_8420374618",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    },
+    {
+      "id": "8485127848",
+      "t": 1792582024,
+      "title": "Заказ для Екатерины - пластинки с классикой в Уфе",
+      "price": 1330,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/zakaz_dlya_ekateriny_-_plastinki_s_klassikoy_8485127848",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "chr"
     }
-  ]
+  ],
+  "sellers": {}
 }
