@@ -52,25 +52,120 @@
       "8485767636": 1500,
       "8391078737": 1000,
       "8340693193": 480,
-      "8405614534": 3500
+      "8405614534": 3500,
+      "8441336475": 3285,
+      "8348450699": 350,
+      "8431482258": 350,
+      "8485006407": 400,
+      "8512477672": 450,
+      "8458162308": 600,
+      "8366645472": 1300
     }
   },
   "queue": [],
   "stats": {
     "since": 1792582871.921895,
-    "checked": 26,
-    "new": 0,
-    "sent": 0,
+    "checked": 30,
+    "new": 6,
+    "sent": 6,
     "deals": 0,
     "blocked": 10,
     "errors": 0,
-    "switches": 20,
+    "switches": 23,
     "stale": 1
   },
   "last_report_date": "2026-10-21",
-  "fp": "safari",
-  "fails": 3,
-  "warned": true,
-  "cooldown_until": 1792600814.8025258,
-  "last_ok": 1792594204.1373053
+  "fp": "chrome",
+  "fails": 0,
+  "warned": false,
+  "cooldown_until": 0,
+  "last_ok": 1792601449.4510503,
+  "sellers": {
+    "/brands/i319039206": {
+      "t": 1792600939.5024872,
+      "d": {
+        "items": 0,
+        "vinyl": 0,
+        "titles": [],
+        "company": true,
+        "reviews": 293,
+        "rating": "5,0",
+        "seller_name": "Балу"
+      }
+    }
+  },
+  "shown": [
+    {
+      "id": "8366645472",
+      "t": 1792600970,
+      "title": "Лирическое настроение (джаз) в Уфе",
+      "price": 1300,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/liricheskoe_nastroenie_dzhaz_8366645472",
+      "date": "3 часа назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
+    },
+    {
+      "id": "8458162308",
+      "t": 1792600971,
+      "title": "Диско клуб 9 2lp в Уфе",
+      "price": 600,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/disko_klub_9_2lp_8458162308",
+      "date": "3 часа назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
+    },
+    {
+      "id": "8512477672",
+      "t": 1792600973,
+      "title": "Karel Zich Elvis Presley songs в Уфе",
+      "price": 450,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/karel_zich_elvis_presley_songs_8512477672",
+      "date": "2 часа назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
+    },
+    {
+      "id": "8485006407",
+      "t": 1792600975,
+      "title": "Музыка Александра Левшина в Уфе",
+      "price": 400,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/muzyka_aleksandra_levshina_8485006407",
+      "date": "2 часа назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
+    },
+    {
+      "id": "8431482258",
+      "t": 1792600976,
+      "title": "Александр Малинин/группа Дети 2 шт в Уфе",
+      "price": 350,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/aleksandr_maliningruppa_deti_2_sht_8431482258",
+      "date": "2 часа назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
+    },
+    {
+      "id": "8348450699",
+      "t": 1792600979,
+      "title": "Кальянов,звездинский,цыганова 3шт в Уфе",
+      "price": 350,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/kalyanovzvezdinskiytsyganova_3sht_8348450699",
+      "date": "2 часа назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
+    }
+  ]
 }
