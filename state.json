@@ -6,7 +6,7 @@
       "8328783215": 2000,
       "8458556128": 2000,
       "8445652292": 2600,
-      "8483183853": 4000,
+      "8483183853": 3000,
       "8390220764": 3200,
       "8367932572": 1757,
       "8408835990": 700,
@@ -56,18 +56,32 @@
   "queue": [],
   "stats": {
     "since": 1792562346.9247398,
-    "checked": 13,
-    "new": 0,
-    "sent": 0,
+    "checked": 14,
+    "new": 1,
+    "sent": 1,
     "deals": 0,
     "blocked": 5,
     "errors": 0,
-    "switches": 12
+    "switches": 13
   },
   "last_report_date": "2026-10-21",
-  "fp": "safari",
-  "fails": 1,
-  "cooldown_until": 1792579435.381193,
+  "fp": "firefox",
+  "fails": 0,
+  "cooldown_until": 0,
   "warned": false,
-  "last_ok": 1792578356.3438373
+  "last_ok": 1792579448.9385352,
+  "shown": [
+    {
+      "id": "8483183853",
+      "t": 1792579477,
+      "title": "Виниловая пластинка Воскресенье в Уфе",
+      "price": 3000,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovaya_plastinka_voskresene_8483183853",
+      "date": "4 часа назад",
+      "kind": "drop",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    }
+  ]
 }
