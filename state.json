@@ -54,27 +54,28 @@
       "8512491842": 350,
       "8408718559": 300,
       "8574978929": 300,
-      "8544055979": 200
+      "8544055979": 200,
+      "8481974491": 450
     }
   },
   "queue": [],
   "stats": {
     "since": 1792664575.1744266,
-    "checked": 22,
-    "new": 4,
-    "sent": 4,
+    "checked": 23,
+    "new": 5,
+    "sent": 5,
     "deals": 0,
     "blocked": 14,
     "errors": 0,
-    "switches": 15,
+    "switches": 16,
     "stale": 1
   },
   "last_report_date": "2026-10-22",
-  "fp": "safari",
-  "fails": 1,
+  "fp": "firefox",
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792683900.5325308,
-  "last_ok": 1792682829.624609,
+  "cooldown_until": 0,
+  "last_ok": 1792684041.8643155,
   "shown": [
     {
       "id": "8483183853",
@@ -118,6 +119,18 @@
       "title": "Сергей Захаров старинный романс в Уфе",
       "price": 300,
       "url": "https://www.avito.ru/ufa/kollektsionirovanie/sergey_zaharov_starinnyy_romans_8574978929",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    },
+    {
+      "id": "8481974491",
+      "t": 1792684079,
+      "title": "Alla Baianova в Уфе",
+      "price": 450,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/alla_baianova_8481974491",
       "date": "1 час назад",
       "kind": "new",
       "q": false,
