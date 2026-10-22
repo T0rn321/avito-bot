@@ -52,27 +52,29 @@
       "8458883057": 8500,
       "8419936340": 300,
       "8512491842": 350,
-      "8408718559": 300
+      "8408718559": 300,
+      "8574978929": 300,
+      "8544055979": 200
     }
   },
   "queue": [],
   "stats": {
     "since": 1792664575.1744266,
-    "checked": 20,
-    "new": 2,
-    "sent": 2,
+    "checked": 22,
+    "new": 4,
+    "sent": 4,
     "deals": 0,
-    "blocked": 13,
+    "blocked": 14,
     "errors": 0,
-    "switches": 14,
+    "switches": 15,
     "stale": 1
   },
   "last_report_date": "2026-10-22",
-  "fp": "firefox",
+  "fp": "safari",
   "fails": 1,
   "warned": false,
-  "cooldown_until": 1792682656.421911,
-  "last_ok": 1792681553.6580532,
+  "cooldown_until": 1792683900.5325308,
+  "last_ok": 1792682829.624609,
   "shown": [
     {
       "id": "8483183853",
@@ -97,6 +99,31 @@
       "q": false,
       "s": "Винил",
       "fp": "fir"
+    },
+    {
+      "id": "8544055979",
+      "t": 1792682713,
+      "title": "Лос Анхелес в Уфе",
+      "price": 200,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/los_anheles_8544055979",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    },
+    {
+      "id": "8574978929",
+      "t": 1792682715,
+      "title": "Сергей Захаров старинный романс в Уфе",
+      "price": 300,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/sergey_zaharov_starinnyy_romans_8574978929",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
     }
-  ]
+  ],
+  "sellers": {}
 }
