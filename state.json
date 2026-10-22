@@ -50,24 +50,39 @@
       "8512491842": 350,
       "8405047466": 450,
       "8369497740": 500,
-      "8346914791": 400
+      "8346914791": 400,
+      "8483182354": 350
     }
   },
   "queue": [],
   "stats": {
     "since": 1792644123.652347,
-    "checked": 2,
-    "new": 0,
-    "sent": 0,
+    "checked": 3,
+    "new": 1,
+    "sent": 1,
     "deals": 0,
     "blocked": 1,
     "errors": 0,
-    "switches": 1
+    "switches": 2
   },
   "last_report_date": "2026-10-22",
-  "fp": "chrome",
-  "fails": 1,
+  "fp": "safari",
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792645370.4550772,
-  "last_ok": 1792644297.5473273
+  "cooldown_until": 0,
+  "last_ok": 1792645375.6702785,
+  "shown": [
+    {
+      "id": "8483182354",
+      "t": 1792645399,
+      "title": "Виниловые пластинки Владимир Высоцкий в Уфе",
+      "price": 350,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_vladimir_vysotskiy_8483182354",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
+    }
+  ]
 }
