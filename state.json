@@ -25,7 +25,7 @@
       "8458499308": 2000,
       "8407933948": 3000,
       "8328783215": 2000,
-      "8458556128": 2000,
+      "8458556128": 1000,
       "8445652292": 2600,
       "8483183853": 2000,
       "8390220764": 3200,
@@ -59,20 +59,20 @@
   "queue": [],
   "stats": {
     "since": 1792684912.9102552,
-    "checked": 8,
-    "new": 3,
-    "sent": 3,
+    "checked": 10,
+    "new": 4,
+    "sent": 4,
     "deals": 0,
     "blocked": 6,
     "errors": 0,
-    "switches": 6
+    "switches": 8
   },
   "last_report_date": "2026-10-22",
   "fp": "firefox",
-  "fails": 3,
-  "warned": true,
-  "cooldown_until": 1792695832.6689966,
-  "last_ok": 1792689052.869685,
+  "fails": 0,
+  "warned": false,
+  "cooldown_until": 0,
+  "last_ok": 1792696079.4774477,
   "shown": [
     {
       "id": "8575493374",
@@ -106,6 +106,18 @@
       "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_8577211199",
       "date": "1 час назад",
       "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
+    },
+    {
+      "id": "8458556128",
+      "t": 1792695912,
+      "title": "Виниловые пластинки Элвис Пресли в Уфе",
+      "price": 1000,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_elvis_presli_8458556128",
+      "date": "Вчера",
+      "kind": "drop",
       "q": false,
       "s": "Винил",
       "fp": "saf"
