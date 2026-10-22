@@ -24,7 +24,7 @@
       "8328783215": 2000,
       "8458556128": 2000,
       "8445652292": 2600,
-      "8483183853": 3000,
+      "8483183853": 2000,
       "8390220764": 3200,
       "8367932572": 1757,
       "8340693193": 480,
@@ -56,18 +56,32 @@
   "queue": [],
   "stats": {
     "since": 1792664575.1744266,
-    "checked": 9,
-    "new": 0,
-    "sent": 0,
+    "checked": 10,
+    "new": 1,
+    "sent": 1,
     "deals": 0,
     "blocked": 5,
     "errors": 0,
-    "switches": 6
+    "switches": 7
   },
   "last_report_date": "2026-10-22",
-  "fp": "firefox",
-  "fails": 2,
-  "warned": true,
-  "cooldown_until": 1792672087.3792782,
-  "last_ok": 1792669091.5446985
+  "fp": "edge",
+  "fails": 0,
+  "warned": false,
+  "cooldown_until": 0,
+  "last_ok": 1792672221.7166748,
+  "shown": [
+    {
+      "id": "8483183853",
+      "t": 1792672260,
+      "title": "Виниловая пластинка Технология в Уфе",
+      "price": 2000,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovaya_plastinka_tehnologiya_8483183853",
+      "date": "Вчера",
+      "kind": "drop",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
+    }
+  ]
 }
