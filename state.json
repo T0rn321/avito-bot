@@ -57,7 +57,7 @@
   "queue": [],
   "stats": {
     "since": 1792623722.4635375,
-    "checked": 42,
+    "checked": 43,
     "new": 1,
     "sent": 1,
     "deals": 0,
@@ -71,7 +71,7 @@
   "fails": 0,
   "cooldown_until": 0,
   "warned": false,
-  "last_ok": 1792643116.9475043,
+  "last_ok": 1792643303.738942,
   "shown": [
     {
       "id": "8441336475",
