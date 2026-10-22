@@ -51,27 +51,28 @@
       "8405663463": 11000,
       "8458883057": 8500,
       "8419936340": 300,
-      "8512491842": 350
+      "8512491842": 350,
+      "8408718559": 300
     }
   },
   "queue": [],
   "stats": {
     "since": 1792664575.1744266,
-    "checked": 19,
-    "new": 1,
-    "sent": 1,
+    "checked": 20,
+    "new": 2,
+    "sent": 2,
     "deals": 0,
-    "blocked": 12,
+    "blocked": 13,
     "errors": 0,
-    "switches": 13,
+    "switches": 14,
     "stale": 1
   },
   "last_report_date": "2026-10-22",
-  "fp": "safari",
+  "fp": "firefox",
   "fails": 1,
   "warned": false,
-  "cooldown_until": 1792681500.7071826,
-  "last_ok": 1792680414.3369071,
+  "cooldown_until": 1792682656.421911,
+  "last_ok": 1792681553.6580532,
   "shown": [
     {
       "id": "8483183853",
@@ -84,6 +85,18 @@
       "q": false,
       "s": "Винил",
       "fp": "edg"
+    },
+    {
+      "id": "8408718559",
+      "t": 1792681582,
+      "title": "Энгельберт Хампердинк в Уфе",
+      "price": 300,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/engelbert_hamperdink_8408718559",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
     }
   ]
 }
