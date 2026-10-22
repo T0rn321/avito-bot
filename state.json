@@ -2,7 +2,7 @@
   "seen": {
     "https://www.avito.ru/ufa/kollektsionirovanie/gramplastinki/vinilovye_plastinki-ASgBAgICAkQcjkyaoheKqpkD?context=H4sIAAAAAAAA_wEmANn_YToxOntzOjE6InkiO3M6MTY6IkVzNUMwWG8yWTQybkdUb0siO30839UfJgAAAA&localPriority=1&q=%D0%B2%D0%B8%D0%BD%D0%B8%D0%BB%D0%BE%D0%B2%D1%8B%D0%B5+%D0%BF%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%BA%D0%B8&s=104": {
       "8420615466": 10,
-      "8441336475": 3285,
+      "8441336475": 2550,
       "8348450699": 350,
       "8431482258": 350,
       "8485006407": 400,
@@ -57,19 +57,33 @@
   "queue": [],
   "stats": {
     "since": 1792623722.4635375,
-    "checked": 32,
-    "new": 0,
-    "sent": 0,
+    "checked": 34,
+    "new": 1,
+    "sent": 1,
     "deals": 0,
     "blocked": 10,
     "errors": 0,
-    "switches": 22,
+    "switches": 23,
     "stale": 1
   },
   "last_report_date": "2026-10-22",
-  "fp": "firefox",
-  "fails": 1,
-  "cooldown_until": 1792641398.8071609,
+  "fp": "safari",
+  "fails": 0,
+  "cooldown_until": 0,
   "warned": false,
-  "last_ok": 1792640304.04828
+  "last_ok": 1792641663.606863,
+  "shown": [
+    {
+      "id": "8441336475",
+      "t": 1792641500,
+      "title": "Виниловые пластинки Олег Газманов- эскодром в Уфе",
+      "price": 2550,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_oleg_gazmanov-_eskodrom_8441336475",
+      "date": "Вчера",
+      "kind": "drop",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
+    }
+  ]
 }
