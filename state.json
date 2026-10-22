@@ -30,7 +30,7 @@
       "8483183853": 2000,
       "8390220764": 3200,
       "8367932572": 1757,
-      "8340693193": 480,
+      "8340693193": 462,
       "8408835990": 700,
       "8459246104": 830,
       "8410508826": 450,
@@ -59,20 +59,20 @@
   "queue": [],
   "stats": {
     "since": 1792684912.9102552,
-    "checked": 11,
-    "new": 4,
-    "sent": 4,
+    "checked": 13,
+    "new": 5,
+    "sent": 5,
     "deals": 0,
     "blocked": 7,
     "errors": 0,
-    "switches": 9
+    "switches": 10
   },
   "last_report_date": "2026-10-22",
-  "fp": "safari",
-  "fails": 1,
+  "fp": "edge",
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792697351.774796,
-  "last_ok": 1792696270.4954731,
+  "cooldown_until": 0,
+  "last_ok": 1792697563.5664256,
   "shown": [
     {
       "id": "8575493374",
@@ -121,6 +121,18 @@
       "q": false,
       "s": "Винил",
       "fp": "saf"
+    },
+    {
+      "id": "8340693193",
+      "t": 1792697391,
+      "title": "Пластинка Адриано Челентано сборник на «Мелодии» в Уфе",
+      "price": 462,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/plastinka_adriano_chelentano_sbornik_na_melodii_8340693193",
+      "date": "3 дня назад",
+      "kind": "drop",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
     }
   ]
 }
