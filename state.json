@@ -53,26 +53,27 @@
       "8346914791": 400,
       "8483182354": 350,
       "8445262212": 800,
-      "8470723464": 450
+      "8470723464": 450,
+      "8544593615": 30
     }
   },
   "queue": [],
   "stats": {
     "since": 1792644123.652347,
-    "checked": 13,
-    "new": 3,
-    "sent": 3,
+    "checked": 16,
+    "new": 4,
+    "sent": 4,
     "deals": 0,
-    "blocked": 4,
+    "blocked": 5,
     "errors": 0,
-    "switches": 10
+    "switches": 12
   },
   "last_report_date": "2026-10-22",
-  "fp": "edge",
-  "fails": 2,
-  "warned": true,
-  "cooldown_until": 1792651374.8142443,
-  "last_ok": 1792648303.2890842,
+  "fp": "firefox",
+  "fails": 1,
+  "warned": false,
+  "cooldown_until": 1792652861.6504052,
+  "last_ok": 1792651771.783056,
   "shown": [
     {
       "id": "8483182354",
@@ -109,6 +110,18 @@
       "q": false,
       "s": "Винил",
       "fp": "chr"
+    },
+    {
+      "id": "8544593615",
+      "t": 1792651412,
+      "title": "Виниловые пластинки на декор в Уфе",
+      "price": 30,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_na_dekor_8544593615",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
     }
   ]
 }
