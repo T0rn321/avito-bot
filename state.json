@@ -55,26 +55,27 @@
       "8445262212": 800,
       "8470723464": 450,
       "8544593615": 30,
-      "8327888466": 300
+      "8327888466": 300,
+      "8410472033": 500
     }
   },
   "queue": [],
   "stats": {
     "since": 1792644123.652347,
-    "checked": 30,
-    "new": 5,
-    "sent": 5,
+    "checked": 34,
+    "new": 6,
+    "sent": 6,
     "deals": 0,
     "blocked": 11,
     "errors": 0,
-    "switches": 21
+    "switches": 22
   },
   "last_report_date": "2026-10-22",
-  "fp": "safari",
-  "fails": 2,
-  "warned": true,
-  "cooldown_until": 1792663054.1510165,
-  "last_ok": 1792660154.945484,
+  "fp": "edge",
+  "fails": 0,
+  "warned": false,
+  "cooldown_until": 0,
+  "last_ok": 1792663620.74292,
   "shown": [
     {
       "id": "8483182354",
@@ -135,6 +136,18 @@
       "q": false,
       "s": "Винил",
       "fp": "fir"
+    },
+    {
+      "id": "8410472033",
+      "t": 1792663125,
+      "title": "Грампластинка В.Мулерман в Уфе",
+      "price": 500,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/gramplastinka_v.mulerman_8410472033",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
     }
   ]
 }
