@@ -51,26 +51,28 @@
       "8405047466": 450,
       "8369497740": 500,
       "8346914791": 400,
-      "8483182354": 350
+      "8483182354": 350,
+      "8445262212": 800,
+      "8470723464": 450
     }
   },
   "queue": [],
   "stats": {
     "since": 1792644123.652347,
-    "checked": 5,
-    "new": 1,
-    "sent": 1,
+    "checked": 9,
+    "new": 3,
+    "sent": 3,
     "deals": 0,
     "blocked": 2,
     "errors": 0,
-    "switches": 4
+    "switches": 7
   },
   "last_report_date": "2026-10-22",
-  "fp": "edge",
-  "fails": 1,
+  "fp": "chrome",
+  "fails": 0,
   "warned": false,
-  "cooldown_until": 1792646805.3048825,
-  "last_ok": 1792645736.1789236,
+  "cooldown_until": 0,
+  "last_ok": 1792647545.4783478,
   "shown": [
     {
       "id": "8483182354",
@@ -83,6 +85,30 @@
       "q": false,
       "s": "Винил",
       "fp": "saf"
+    },
+    {
+      "id": "8445262212",
+      "t": 1792647006,
+      "title": "Виниловые пластинки Таня Корнева группа Королина в Уфе",
+      "price": 800,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_tanya_korneva_gruppa_korolina_8445262212",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "chr"
+    },
+    {
+      "id": "8470723464",
+      "t": 1792647570,
+      "title": "Виниловые пластинки Алексей Глызин группа Ура в Уфе",
+      "price": 450,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_aleksey_glyzin_gruppa_ura_8470723464",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "chr"
     }
   ]
 }
