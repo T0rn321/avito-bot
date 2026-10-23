@@ -62,15 +62,15 @@
     "new": 4,
     "sent": 4,
     "deals": 0,
-    "blocked": 7,
+    "blocked": 8,
     "errors": 0,
     "switches": 4
   },
   "last_report_date": "2026-10-23",
   "fp": "firefox",
-  "fails": 1,
-  "warned": false,
-  "cooldown_until": 1792755197.511286,
+  "fails": 2,
+  "warned": true,
+  "cooldown_until": 1792757155.4421737,
   "last_ok": 1792754112.1944842,
   "shown": [
     {
