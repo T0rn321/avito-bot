@@ -56,26 +56,29 @@
       "8485163857": 6000,
       "8441430765": 250,
       "8348131254": 700,
-      "8491378439": 400
+      "8491378439": 400,
+      "8521451551": 300,
+      "8409861211": 600,
+      "8400511839": 400
     }
   },
   "queue": [],
   "stats": {
     "since": 1792746226.3139594,
-    "checked": 11,
-    "new": 8,
-    "sent": 8,
+    "checked": 13,
+    "new": 11,
+    "sent": 11,
     "deals": 0,
-    "blocked": 12,
+    "blocked": 13,
     "errors": 0,
-    "switches": 6
+    "switches": 8
   },
   "last_report_date": "2026-10-23",
   "fp": "firefox",
   "fails": 1,
   "warned": false,
-  "cooldown_until": 1792762499.0583937,
-  "last_ok": 1792761440.1282923,
+  "cooldown_until": 1792763929.4673162,
+  "last_ok": 1792762872.2010589,
   "shown": [
     {
       "id": "8369628399",
@@ -172,6 +175,43 @@
       "q": false,
       "s": "Винил",
       "fp": "fir"
+    },
+    {
+      "id": "8400511839",
+      "t": 1792762747,
+      "title": "Булат Окуджава в Уфе",
+      "price": 400,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/bulat_okudzhava_8400511839",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
+    },
+    {
+      "id": "8409861211",
+      "t": 1792762748,
+      "title": "Виа София в Уфе",
+      "price": 600,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/via_sofiya_8409861211",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
+    },
+    {
+      "id": "8521451551",
+      "t": 1792762750,
+      "title": "Иосиф Кобзон танго,танго,танго в Уфе",
+      "price": 300,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/iosif_kobzon_tangotangotango_8521451551",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
     }
-  ]
+  ],
+  "sellers": {}
 }
