@@ -50,24 +50,26 @@
       "8459246104": 830,
       "8410508826": 450,
       "8340370563": 500,
-      "8482586161": 300
+      "8482586161": 300,
+      "8423327990": 250
     }
   },
   "queue": [],
   "stats": {
     "since": 1792787009.602258,
-    "checked": 1,
+    "checked": 3,
     "new": 0,
     "sent": 0,
     "deals": 0,
-    "blocked": 2,
+    "blocked": 3,
     "errors": 0,
-    "switches": 1
+    "switches": 3,
+    "stale": 1
   },
   "last_report_date": "2026-10-24",
-  "fp": "safari",
-  "fails": 2,
-  "warned": true,
-  "cooldown_until": 1792789950.5567067,
-  "last_ok": 1792787010.122309
+  "fp": "firefox",
+  "fails": 1,
+  "warned": false,
+  "cooldown_until": 1792791213.32558,
+  "last_ok": 1792790152.839519
 }
