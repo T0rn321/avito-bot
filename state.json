@@ -51,25 +51,27 @@
       "8420764712": 400,
       "8369005072": 1100,
       "8482462384": 1000,
-      "8544619074": 800
+      "8544619074": 800,
+      "8328838399": 1500
     }
   },
   "queue": [],
   "stats": {
     "since": 1792746226.3139594,
-    "checked": 3,
-    "new": 2,
-    "sent": 2,
+    "checked": 4,
+    "new": 3,
+    "sent": 3,
     "deals": 0,
     "blocked": 4,
-    "errors": 0
+    "errors": 0,
+    "switches": 1
   },
   "last_report_date": "2026-10-23",
-  "fp": "firefox",
-  "fails": 2,
-  "warned": true,
-  "cooldown_until": 1792751466.4968908,
-  "last_ok": 1792748491.114715,
+  "fp": "edge",
+  "fails": 0,
+  "warned": false,
+  "cooldown_until": 0,
+  "last_ok": 1792751583.3854342,
   "shown": [
     {
       "id": "8369628399",
@@ -94,6 +96,18 @@
       "q": false,
       "s": "Винил",
       "fp": "fir"
+    },
+    {
+      "id": "8328838399",
+      "t": 1792751617,
+      "title": "Виниловые пластинки Антология американской музыки в Уфе",
+      "price": 1500,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_antologiya_amerikanskoy_muzyki_8328838399",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "edg"
     }
   ]
 }
