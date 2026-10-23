@@ -53,17 +53,20 @@
       "8482462384": 1000,
       "8544619074": 800,
       "8328838399": 1500,
-      "8485163857": 6000
+      "8485163857": 6000,
+      "8441430765": 250,
+      "8348131254": 700,
+      "8491378439": 400
     }
   },
   "queue": [],
   "stats": {
     "since": 1792746226.3139594,
-    "checked": 10,
-    "new": 5,
-    "sent": 5,
+    "checked": 11,
+    "new": 8,
+    "sent": 8,
     "deals": 0,
-    "blocked": 11,
+    "blocked": 12,
     "errors": 0,
     "switches": 6
   },
@@ -71,8 +74,8 @@
   "fp": "firefox",
   "fails": 1,
   "warned": false,
-  "cooldown_until": 1792761429.657864,
-  "last_ok": 1792760364.3245301,
+  "cooldown_until": 1792762499.0583937,
+  "last_ok": 1792761440.1282923,
   "shown": [
     {
       "id": "8369628399",
@@ -130,6 +133,42 @@
       "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_oleg_gazmanov-_eskodrom_8441336475",
       "date": "3 дня назад",
       "kind": "drop",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    },
+    {
+      "id": "8491378439",
+      "t": 1792761522,
+      "title": "Hans Jurgen beyer в Уфе",
+      "price": 400,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/hans_jurgen_beyer_8491378439",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    },
+    {
+      "id": "8348131254",
+      "t": 1792761528,
+      "title": "Тухманов по волне моей памяти в Уфе",
+      "price": 700,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/tuhmanov_po_volne_moey_pamyati_8348131254",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    },
+    {
+      "id": "8441430765",
+      "t": 1792761530,
+      "title": "Для вас женщины (сборник) в Уфе",
+      "price": 250,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/dlya_vas_zhenschiny_sbornik_8441430765",
+      "date": "1 час назад",
+      "kind": "new",
       "q": false,
       "s": "Винил",
       "fp": "fir"
