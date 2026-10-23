@@ -55,19 +55,19 @@
   },
   "queue": [],
   "stats": {
-    "since": 1792766582.215182,
-    "checked": 7,
+    "since": 1792787009.602258,
+    "checked": 1,
     "new": 0,
     "sent": 0,
     "deals": 0,
-    "blocked": 9,
+    "blocked": 1,
     "errors": 0,
-    "switches": 4
+    "switches": 1
   },
-  "last_report_date": "2026-10-23",
-  "fp": "firefox",
-  "fails": 4,
-  "cooldown_until": 1792787161.5913482,
-  "warned": true,
-  "last_ok": 1792773212.4298923
+  "last_report_date": "2026-10-24",
+  "fp": "safari",
+  "fails": 1,
+  "warned": false,
+  "cooldown_until": 1792788088.958236,
+  "last_ok": 1792787010.122309
 }
