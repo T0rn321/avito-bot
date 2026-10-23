@@ -20,7 +20,7 @@
       "8470723464": 450,
       "8483182354": 350,
       "8485474183": 550,
-      "8441336475": 2550,
+      "8441336475": 2055,
       "8348450699": 350,
       "8431482258": 350,
       "8485006407": 400,
@@ -58,20 +58,20 @@
   "queue": [],
   "stats": {
     "since": 1792746226.3139594,
-    "checked": 4,
-    "new": 3,
-    "sent": 3,
+    "checked": 5,
+    "new": 4,
+    "sent": 4,
     "deals": 0,
-    "blocked": 4,
+    "blocked": 5,
     "errors": 0,
-    "switches": 1
+    "switches": 2
   },
   "last_report_date": "2026-10-23",
-  "fp": "edge",
-  "fails": 0,
+  "fp": "firefox",
+  "fails": 1,
   "warned": false,
-  "cooldown_until": 0,
-  "last_ok": 1792751583.3854342,
+  "cooldown_until": 1792752862.9824626,
+  "last_ok": 1792751779.2603588,
   "shown": [
     {
       "id": "8369628399",
@@ -108,6 +108,18 @@
       "q": false,
       "s": "Винил",
       "fp": "edg"
+    },
+    {
+      "id": "8441336475",
+      "t": 1792751813,
+      "title": "Виниловые пластинки Олег Газманов- эскодром в Уфе",
+      "price": 2055,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_oleg_gazmanov-_eskodrom_8441336475",
+      "date": "3 дня назад",
+      "kind": "drop",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
     }
   ]
 }
