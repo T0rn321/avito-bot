@@ -72,19 +72,19 @@
   "queue": [],
   "stats": {
     "since": 1792848262.9199235,
-    "checked": 22,
+    "checked": 25,
     "new": 0,
     "sent": 0,
     "deals": 0,
-    "blocked": 18,
+    "blocked": 19,
     "errors": 0,
     "stale": 16,
-    "switches": 11
+    "switches": 14
   },
   "last_report_date": "2026-10-24",
-  "fp": "firefox",
-  "fails": 2,
-  "warned": true,
-  "cooldown_until": 1792874343.760389,
-  "last_ok": 1792871454.063655
+  "fp": "safari",
+  "fails": 1,
+  "warned": false,
+  "cooldown_until": 1792875859.2786293,
+  "last_ok": 1792874760.7272947
 }
