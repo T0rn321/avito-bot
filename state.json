@@ -50,24 +50,52 @@
       "8390220764": 3200,
       "8367932572": 1757,
       "8340693193": 462,
-      "8408835990": 700
+      "8408835990": 700,
+      "8471242485": 600,
+      "8382523614": 2897
     }
   },
   "queue": [],
   "stats": {
     "since": 1792827893.4872108,
-    "checked": 11,
-    "new": 0,
-    "sent": 0,
+    "checked": 12,
+    "new": 2,
+    "sent": 2,
     "deals": 0,
     "blocked": 9,
     "errors": 0,
-    "switches": 5
+    "switches": 6
   },
   "last_report_date": "2026-10-24",
-  "fp": "safari",
-  "fails": 2,
-  "warned": true,
-  "cooldown_until": 1792844160.1459782,
-  "last_ok": 1792841152.1986122
+  "fp": "firefox",
+  "fails": 0,
+  "warned": false,
+  "cooldown_until": 0,
+  "last_ok": 1792844242.0370653,
+  "shown": [
+    {
+      "id": "8382523614",
+      "t": 1792844287,
+      "title": "Заказ для Юли - пластинки с классикой в Уфе",
+      "price": 2897,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/zakaz_dlya_yuli_-_plastinki_s_klassikoy_8382523614",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    },
+    {
+      "id": "8471242485",
+      "t": 1792844292,
+      "title": "Виниловые пластинки Градский в Уфе",
+      "price": 600,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_gradskiy_8471242485",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "fir"
+    }
+  ]
 }
