@@ -52,26 +52,28 @@
       "8340693193": 462,
       "8408835990": 700,
       "8471242485": 600,
-      "8382523614": 2897
+      "8382523614": 2897,
+      "8557497871": 400,
+      "8347375625": 1850
     }
   },
   "queue": [],
   "stats": {
     "since": 1792827893.4872108,
-    "checked": 14,
-    "new": 2,
-    "sent": 2,
+    "checked": 17,
+    "new": 4,
+    "sent": 4,
     "deals": 0,
-    "blocked": 10,
+    "blocked": 11,
     "errors": 0,
-    "switches": 7
+    "switches": 8
   },
   "last_report_date": "2026-10-24",
-  "fp": "safari",
+  "fp": "firefox",
   "fails": 1,
   "warned": false,
-  "cooldown_until": 1792845658.2599862,
-  "last_ok": 1792844600.3835685,
+  "cooldown_until": 1792847271.6887047,
+  "last_ok": 1792846182.4844031,
   "shown": [
     {
       "id": "8382523614",
@@ -96,6 +98,30 @@
       "q": false,
       "s": "Винил",
       "fp": "fir"
+    },
+    {
+      "id": "8347375625",
+      "t": 1792845871,
+      "title": "Billy Joel – Songs In The Attic, 1981 Япония в Уфе",
+      "price": 1850,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/billy_joel_songs_in_the_attic_1981_yaponiya_8347375625",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
+    },
+    {
+      "id": "8557497871",
+      "t": 1792845877,
+      "title": "Виниловые пластинки сказки Корнея Чуковского в Уфе",
+      "price": 400,
+      "url": "https://www.avito.ru/ufa/kollektsionirovanie/vinilovye_plastinki_skazki_korneya_chukovskogo_8557497871",
+      "date": "1 час назад",
+      "kind": "new",
+      "q": false,
+      "s": "Винил",
+      "fp": "saf"
     }
   ]
 }
