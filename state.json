@@ -7,7 +7,7 @@
       "8382523614": 2897,
       "8491373943": 500,
       "8445740541": 1000,
-      "8544206182": 3250,
+      "8544206182": 3200,
       "8347243341": 111111,
       "8521451551": 300,
       "8409861211": 600,
@@ -72,19 +72,19 @@
   "queue": [],
   "stats": {
     "since": 1792848262.9199235,
-    "checked": 18,
+    "checked": 21,
     "new": 0,
     "sent": 0,
     "deals": 0,
     "blocked": 16,
     "errors": 0,
     "stale": 16,
-    "switches": 9
+    "switches": 10
   },
   "last_report_date": "2026-10-24",
-  "fp": "firefox",
-  "fails": 2,
-  "warned": true,
-  "cooldown_until": 1792870773.3089678,
-  "last_ok": 1792867757.2332642
+  "fp": "edge",
+  "fails": 0,
+  "warned": false,
+  "cooldown_until": 0,
+  "last_ok": 1792871293.3175445
 }
