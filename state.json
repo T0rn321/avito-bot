@@ -1,6 +1,9 @@
 {
   "seen": {
     "https://www.avito.ru/ufa/kollektsionirovanie/gramplastinki/vinilovye_plastinki-ASgBAgICAkQcjkyaoheKqpkD?context=H4sIAAAAAAAA_wEmANn_YToxOntzOjE6InkiO3M6MTY6IkVzNUMwWG8yWTQybkdUb0siO30839UfJgAAAA&localPriority=1&q=%D0%B2%D0%B8%D0%BD%D0%B8%D0%BB%D0%BE%D0%B2%D1%8B%D0%B5+%D0%BF%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%BA%D0%B8&s=104": {
+      "8491373943": 500,
+      "8445740541": 1000,
+      "8544206182": 3250,
       "8347243341": 111111,
       "8521451551": 300,
       "8409861211": 600,
@@ -45,32 +48,25 @@
       "8445652292": 2600,
       "8483183853": 2000,
       "8390220764": 3200,
-      "8340693193": 462,
-      "8408835990": 700,
-      "8459246104": 830,
-      "8410508826": 450,
-      "8340370563": 500,
-      "8482586161": 300,
       "8367932572": 1757,
-      "8544206182": 3250
+      "8340693193": 462,
+      "8408835990": 700
     }
   },
   "queue": [],
   "stats": {
-    "since": 1792807462.5449774,
-    "checked": 24,
+    "since": 1792827893.4872108,
+    "checked": 1,
     "new": 0,
     "sent": 0,
     "deals": 0,
-    "blocked": 12,
-    "errors": 0,
-    "switches": 15,
-    "stale": 1
+    "blocked": 1,
+    "errors": 0
   },
   "last_report_date": "2026-10-24",
-  "fp": "safari",
-  "fails": 4,
-  "warned": true,
-  "cooldown_until": 1792833346.9351318,
-  "last_ok": 1792819491.4095585
+  "fp": "firefox",
+  "fails": 1,
+  "warned": false,
+  "cooldown_until": 1792828980.4317386,
+  "last_ok": 1792827893.7965205
 }
