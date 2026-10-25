@@ -60,14 +60,14 @@
     "new": 0,
     "sent": 0,
     "deals": 0,
-    "blocked": 3,
+    "blocked": 4,
     "errors": 0,
     "switches": 5
   },
   "last_report_date": "2026-10-25",
   "fp": "edge",
-  "fails": 3,
+  "fails": 4,
   "warned": true,
-  "cooldown_until": 1792886394.9540737,
+  "cooldown_until": 1792893626.7329931,
   "last_ok": 1792879811.8250318
 }
